@@ -21,7 +21,7 @@ struct TemplateData: Codable {
         self.height = try container.decode(Float.self, forKey: .height)
         
         
-        // If a properties is out ouf bound and has no default value specify
+        // If a properties is out ouf bound and has no default value was specified
         // an error is throwed
         if TemplateData.isOutOfBound(self.width) == true {
             throw TemplateSerializationError.outOfBounds
@@ -39,6 +39,8 @@ struct TemplateData: Codable {
             self.backgroundColor = nil
         }
         
+        // If the background color string exist BUT is not a hex string
+        // an error is throwed
         if let back = self.backgroundColor, back.isHex == false {
             throw TemplateSerializationError.wrongStringFormat
         }

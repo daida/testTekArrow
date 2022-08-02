@@ -24,6 +24,7 @@
 		A13FDEF628994AB500B584E7 /* TemplateAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF528994AB500B584E7 /* TemplateAnchor.swift */; };
 		A13FDEF828994AD700B584E7 /* TemplateMediaContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF728994AD700B584E7 /* TemplateMediaContentMode.swift */; };
 		A13FDEFA289955BC00B584E7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF9289955BC00B584E7 /* StringExtension.swift */; };
+		A13FDEFD2899630A00B584E7 /* TemplateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEFC2899630A00B584E7 /* TemplateListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		A13FDEF528994AB500B584E7 /* TemplateAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAnchor.swift; sourceTree = "<group>"; };
 		A13FDEF728994AD700B584E7 /* TemplateMediaContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateMediaContentMode.swift; sourceTree = "<group>"; };
 		A13FDEF9289955BC00B584E7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		A13FDEFC2899630A00B584E7 /* TemplateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				A13FDEF0289946E400B584E7 /* ViewModelFactory.swift */,
 				A13FDEBE28991B4000B584E7 /* Assets.xcassets */,
 				A13FDEC028991B4000B584E7 /* Preview Content */,
+				A13FDEFC2899630A00B584E7 /* TemplateListView.swift */,
 			);
 			path = TestTek;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				A13FDEBD28991B3F00B584E7 /* ContentView.swift in Sources */,
 				A13FDEEB2899263C00B584E7 /* TemplateManager.swift in Sources */,
 				A13FDEF428994A6000B584E7 /* TemplateData.swift in Sources */,
+				A13FDEFD2899630A00B584E7 /* TemplateListView.swift in Sources */,
 				A13FDEF628994AB500B584E7 /* TemplateAnchor.swift in Sources */,
 				A13FDEE628991D4400B584E7 /* APIService.swift in Sources */,
 				A13FDEEF289946B500B584E7 /* TemplateListViewModel.swift in Sources */,

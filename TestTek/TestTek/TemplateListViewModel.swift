@@ -7,20 +7,59 @@
 
 import Foundation
 
-class TemplateListViewModel {
+class TemplateListViewModel: ObservableObject {
     
     private let manager: TemplateManagerInterface
     
-    init(templateManager: TemplateManagerInterface) {
-        self.manager = templateManager
-        
-        self.manager.getTemplate { result in
-            switch result {
-            case .success(let template):
-                print(template)
-            case .failure(let error):
-                print(error)
+    private var mode: Mode = .loading {
+        didSet { self.didUpdateMode() }
+    }
+    
+    @Published var shouldDisplayLoaderView: Bool = false
+    @Published var templates: [Template] = []
+    @Published var errorMessageText: String? = nil
+    
+    func didUpdateMode() {
+        DispatchQueue.main.async {
+            switch self.mode {
+            case .loading:
+                self.shouldDisplayLoaderView = true
+                self.templates = []
+                self.errorMessageText = nil
+            case .error(let templateError):
+                self.errorMessageText = templateError.userReadableText
+                self.templates = []
+                self.shouldDisplayLoaderView = false
+            case .ready(let templates):
+                self.templates = templates
+                self.errorMessageText = nil
+                self.shouldDisplayLoaderView = false
             }
         }
+    }
+    
+    init(templateManager: TemplateManagerInterface) {
+        self.manager = templateManager
+        self.didUpdateMode()
+    }
+    
+    func startLoadingTemplate() {
+        self.manager.getTemplates { [weak self] result in
+            guard let `self` = self else { return }
+            switch result {
+            case .success(let template):
+                self.mode = .ready(template)
+            case .failure(let error):
+                self.mode = .error(error)
+            }
+        }
+    }
+}
+
+extension TemplateListViewModel {
+    enum Mode {
+        case loading
+        case ready([Template])
+        case error(TemplateServiceError)
     }
 }
