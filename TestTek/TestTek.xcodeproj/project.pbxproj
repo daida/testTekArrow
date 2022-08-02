@@ -16,7 +16,14 @@
 		A13FDED828991B4000B584E7 /* TestTekUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */; };
 		A13FDEE628991D4400B584E7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEE528991D4400B584E7 /* APIService.swift */; };
 		A13FDEE92899240700B584E7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A13FDEE82899240700B584E7 /* Reachability */; };
-		A13FDEEB2899263C00B584E7 /* TemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEEA2899263C00B584E7 /* TemplateService.swift */; };
+		A13FDEEB2899263C00B584E7 /* TemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEEA2899263C00B584E7 /* TemplateManager.swift */; };
+		A13FDEED28992CD600B584E7 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEEC28992CD600B584E7 /* Template.swift */; };
+		A13FDEEF289946B500B584E7 /* TemplateListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEEE289946B500B584E7 /* TemplateListViewModel.swift */; };
+		A13FDEF1289946E500B584E7 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF0289946E400B584E7 /* ViewModelFactory.swift */; };
+		A13FDEF428994A6000B584E7 /* TemplateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF328994A6000B584E7 /* TemplateData.swift */; };
+		A13FDEF628994AB500B584E7 /* TemplateAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF528994AB500B584E7 /* TemplateAnchor.swift */; };
+		A13FDEF828994AD700B584E7 /* TemplateMediaContentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF728994AD700B584E7 /* TemplateMediaContentMode.swift */; };
+		A13FDEFA289955BC00B584E7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF9289955BC00B584E7 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +55,14 @@
 		A13FDED528991B4000B584E7 /* TestTekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITests.swift; sourceTree = "<group>"; };
 		A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A13FDEE528991D4400B584E7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		A13FDEEA2899263C00B584E7 /* TemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateService.swift; sourceTree = "<group>"; };
+		A13FDEEA2899263C00B584E7 /* TemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateManager.swift; sourceTree = "<group>"; };
+		A13FDEEC28992CD600B584E7 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		A13FDEEE289946B500B584E7 /* TemplateListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListViewModel.swift; sourceTree = "<group>"; };
+		A13FDEF0289946E400B584E7 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		A13FDEF328994A6000B584E7 /* TemplateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateData.swift; sourceTree = "<group>"; };
+		A13FDEF528994AB500B584E7 /* TemplateAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAnchor.swift; sourceTree = "<group>"; };
+		A13FDEF728994AD700B584E7 /* TemplateMediaContentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateMediaContentMode.swift; sourceTree = "<group>"; };
+		A13FDEF9289955BC00B584E7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +114,12 @@
 		A13FDEB928991B3F00B584E7 /* TestTek */ = {
 			isa = PBXGroup;
 			children = (
+				A13FDEFB2899571100B584E7 /* Extensions */,
 				A13FDEE428991CDA00B584E7 /* Data */,
 				A13FDEBA28991B3F00B584E7 /* TestTekApp.swift */,
 				A13FDEBC28991B3F00B584E7 /* ContentView.swift */,
+				A13FDEEE289946B500B584E7 /* TemplateListViewModel.swift */,
+				A13FDEF0289946E400B584E7 /* ViewModelFactory.swift */,
 				A13FDEBE28991B4000B584E7 /* Assets.xcassets */,
 				A13FDEC028991B4000B584E7 /* Preview Content */,
 			);
@@ -137,10 +154,30 @@
 		A13FDEE428991CDA00B584E7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A13FDEF228994A4100B584E7 /* Model */,
 				A13FDEE528991D4400B584E7 /* APIService.swift */,
-				A13FDEEA2899263C00B584E7 /* TemplateService.swift */,
+				A13FDEEA2899263C00B584E7 /* TemplateManager.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		A13FDEF228994A4100B584E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDEEC28992CD600B584E7 /* Template.swift */,
+				A13FDEF328994A6000B584E7 /* TemplateData.swift */,
+				A13FDEF528994AB500B584E7 /* TemplateAnchor.swift */,
+				A13FDEF728994AD700B584E7 /* TemplateMediaContentMode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A13FDEFB2899571100B584E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDEF9289955BC00B584E7 /* StringExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,10 +316,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13FDEED28992CD600B584E7 /* Template.swift in Sources */,
 				A13FDEBD28991B3F00B584E7 /* ContentView.swift in Sources */,
-				A13FDEEB2899263C00B584E7 /* TemplateService.swift in Sources */,
+				A13FDEEB2899263C00B584E7 /* TemplateManager.swift in Sources */,
+				A13FDEF428994A6000B584E7 /* TemplateData.swift in Sources */,
+				A13FDEF628994AB500B584E7 /* TemplateAnchor.swift in Sources */,
 				A13FDEE628991D4400B584E7 /* APIService.swift in Sources */,
+				A13FDEEF289946B500B584E7 /* TemplateListViewModel.swift in Sources */,
 				A13FDEBB28991B3F00B584E7 /* TestTekApp.swift in Sources */,
+				A13FDEF1289946E500B584E7 /* ViewModelFactory.swift in Sources */,
+				A13FDEFA289955BC00B584E7 /* StringExtension.swift in Sources */,
+				A13FDEF828994AD700B584E7 /* TemplateMediaContentMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,18 +9,6 @@ import Foundation
 import SwiftUI
 import Reachability
 
-protocol APIServiceInterface {
-    func getTemplate(onCompletion: @escaping (Result<Data, APIServiceError>) -> Void)
-    var requestTimeOut: Int { get set }
-}
-
-enum APIServiceError: Error {
-    case httpError(code: Int, originalError: Error?)
-    case noInternet
-    case noData(originalError: Error?)
-    case noHttpResponse
-}
-
 struct APIService: APIServiceInterface {
     
     var requestTimeOut = 3
@@ -69,7 +57,7 @@ struct APIService: APIServiceInterface {
             }
             
             // Http Status code is not 200 (mean OK)
-            guard response.statusCode != 200 else {
+            guard response.statusCode == 200 else {
                 onCompletion(.failure(.httpError(code: response.statusCode, originalError: error)))
                 return
             }
@@ -82,7 +70,19 @@ struct APIService: APIServiceInterface {
             
             // Everything is alright :)
             onCompletion(.success(data))
-        }
+        }.resume()
     }
     
+}
+
+protocol APIServiceInterface {
+    func getTemplate(onCompletion: @escaping (Result<Data, APIServiceError>) -> Void)
+    var requestTimeOut: Int { get set }
+}
+
+enum APIServiceError: Error {
+    case httpError(code: Int, originalError: Error?)
+    case noInternet
+    case noData(originalError: Error?)
+    case noHttpResponse
 }

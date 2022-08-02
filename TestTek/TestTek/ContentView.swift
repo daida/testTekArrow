@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    let viewModel = ViewModelFactory.generateListViewModel()
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
+            .onAppear() {
+                
+            }
     }
 }
 
