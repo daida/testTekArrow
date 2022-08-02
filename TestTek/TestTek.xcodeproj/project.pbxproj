@@ -14,6 +14,9 @@
 		A13FDECC28991B4000B584E7 /* TestTekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDECB28991B4000B584E7 /* TestTekTests.swift */; };
 		A13FDED628991B4000B584E7 /* TestTekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED528991B4000B584E7 /* TestTekUITests.swift */; };
 		A13FDED828991B4000B584E7 /* TestTekUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */; };
+		A13FDEE628991D4400B584E7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEE528991D4400B584E7 /* APIService.swift */; };
+		A13FDEE92899240700B584E7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A13FDEE82899240700B584E7 /* Reachability */; };
+		A13FDEEB2899263C00B584E7 /* TemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEEA2899263C00B584E7 /* TemplateService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,8 @@
 		A13FDED128991B4000B584E7 /* TestTekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13FDED528991B4000B584E7 /* TestTekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITests.swift; sourceTree = "<group>"; };
 		A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A13FDEE528991D4400B584E7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A13FDEEA2899263C00B584E7 /* TemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13FDEE92899240700B584E7 /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,7 @@
 		A13FDEB928991B3F00B584E7 /* TestTek */ = {
 			isa = PBXGroup;
 			children = (
+				A13FDEE428991CDA00B584E7 /* Data */,
 				A13FDEBA28991B3F00B584E7 /* TestTekApp.swift */,
 				A13FDEBC28991B3F00B584E7 /* ContentView.swift */,
 				A13FDEBE28991B4000B584E7 /* Assets.xcassets */,
@@ -127,6 +134,15 @@
 			path = TestTekUITests;
 			sourceTree = "<group>";
 		};
+		A13FDEE428991CDA00B584E7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDEE528991D4400B584E7 /* APIService.swift */,
+				A13FDEEA2899263C00B584E7 /* TemplateService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +159,9 @@
 			dependencies = (
 			);
 			name = TestTek;
+			packageProductDependencies = (
+				A13FDEE82899240700B584E7 /* Reachability */,
+			);
 			productName = TestTek;
 			productReference = A13FDEB728991B3F00B584E7 /* TestTek.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +234,9 @@
 				Base,
 			);
 			mainGroup = A13FDEAE28991B3F00B584E7;
+			packageReferences = (
+				A13FDEE72899240700B584E7 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+			);
 			productRefGroup = A13FDEB828991B3F00B584E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A13FDEBD28991B3F00B584E7 /* ContentView.swift in Sources */,
+				A13FDEEB2899263C00B584E7 /* TemplateService.swift in Sources */,
+				A13FDEE628991D4400B584E7 /* APIService.swift in Sources */,
 				A13FDEBB28991B3F00B584E7 /* TestTekApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A13FDEE72899240700B584E7 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A13FDEE82899240700B584E7 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A13FDEE72899240700B584E7 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A13FDEAF28991B3F00B584E7 /* Project object */;
 }
