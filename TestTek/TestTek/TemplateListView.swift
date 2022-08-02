@@ -12,15 +12,42 @@ struct TemplateListView: View {
     @StateObject var viewModel = ViewModelFactory.generateListViewModel()
     
     var body: some View {
-            Text(self.viewModel.templates.first?.name ?? "nothing")
-            ForEach(self.viewModel.templates) { template in
-                VStack {
-                    Text(template.name)
+        VStack {
+            if viewModel.shouldDisplayLoaderView == true {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            } else if let message = viewModel.errorMessageText {
+                Button(message) {
+                    self.startLoading()
                 }
-            }.onAppear() {
-                self.startLoading()
+            } else {
+                self.generateListView()
             }
+        }.navigationTitle("Choose a template")
+            .alert(isPresented: $viewModel.shouldDisplayAlertView) {
+                Alert(title: Text(self.viewModel.errorMessageText ?? ""),
+                      message: Text("Retry?"),
+                      primaryButton: .default(Text("Retry"),
+                                              action: self.startLoading), secondaryButton: .cancel())
+            }
+    }
+    
+    func generateListView() -> some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+                ForEach(self.viewModel.templates) { template in
+                    NavigationLink {
+                        TemplateView(template: template)
+                    } label: {
+                        Color.red
+                            .frame(height: 200)
+                    }
+                }
+            }.padding()
+        }.onAppear() {
+            self.viewModel.startLoadingTemplate()
         }
+    }
     
     func startLoading() {
         self.viewModel.startLoadingTemplate()

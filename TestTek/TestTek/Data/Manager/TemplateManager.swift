@@ -37,6 +37,7 @@ struct TemplateManager: TemplateManagerInterface {
                             onCompletion(.failure(.noData))
                             return
                         }
+                        
                         onCompletion(.success(dest))
                     } catch {
                         self.queue.async {

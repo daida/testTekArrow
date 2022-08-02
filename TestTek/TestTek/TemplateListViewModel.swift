@@ -18,19 +18,23 @@ class TemplateListViewModel: ObservableObject {
     @Published var shouldDisplayLoaderView: Bool = false
     @Published var templates: [Template] = []
     @Published var errorMessageText: String? = nil
+    @Published var shouldDisplayAlertView = false
     
     func didUpdateMode() {
         DispatchQueue.main.async {
             switch self.mode {
             case .loading:
+                self.shouldDisplayAlertView = false
                 self.shouldDisplayLoaderView = true
                 self.templates = []
                 self.errorMessageText = nil
             case .error(let templateError):
+                self.shouldDisplayAlertView = true
                 self.errorMessageText = templateError.userReadableText
                 self.templates = []
                 self.shouldDisplayLoaderView = false
             case .ready(let templates):
+                self.shouldDisplayAlertView = false
                 self.templates = templates
                 self.errorMessageText = nil
                 self.shouldDisplayLoaderView = false
@@ -51,7 +55,6 @@ class TemplateListViewModel: ObservableObject {
                 self.mode = .ready(template)
             case .failure(let error):
                 self.mode = .error(error)
-                print(error)
             }
         }
     }

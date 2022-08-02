@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Template: Codable, Identifiable {
     let name: String
     let data: TemplateData
