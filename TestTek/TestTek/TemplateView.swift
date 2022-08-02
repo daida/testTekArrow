@@ -16,13 +16,22 @@ struct TemplateView: View {
     }
     
     var body: some View {
-        Text(template.name)
+        TemplateRenderViewBridge(data: template.data)
     }
 }
 
-//struct TemplateView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        
-//        TemplateView()
-//    }
-//}
+struct TemplateView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        
+        let url = Bundle.main.url(forResource: "templates", withExtension: "json")!
+        
+        let Data = try! Data(contentsOf: url)
+        
+        let dico = try! JSONDecoder().decode([String : [Template]].self, from: Data)
+        
+        let firstTemplate = dico["templates"]!.first!
+        
+        TemplateView(template: firstTemplate)
+    }
+}
