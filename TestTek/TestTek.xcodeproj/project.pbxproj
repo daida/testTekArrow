@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A13FDEBB28991B3F00B584E7 /* TestTekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEBA28991B3F00B584E7 /* TestTekApp.swift */; };
+		A13FDEBD28991B3F00B584E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEBC28991B3F00B584E7 /* ContentView.swift */; };
+		A13FDEBF28991B4000B584E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13FDEBE28991B4000B584E7 /* Assets.xcassets */; };
+		A13FDEC228991B4000B584E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13FDEC128991B4000B584E7 /* Preview Assets.xcassets */; };
+		A13FDECC28991B4000B584E7 /* TestTekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDECB28991B4000B584E7 /* TestTekTests.swift */; };
+		A13FDED628991B4000B584E7 /* TestTekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED528991B4000B584E7 /* TestTekUITests.swift */; };
+		A13FDED828991B4000B584E7 /* TestTekUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A13FDEC828991B4000B584E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A13FDEAF28991B3F00B584E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A13FDEB628991B3F00B584E7;
+			remoteInfo = TestTek;
+		};
+		A13FDED228991B4000B584E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A13FDEAF28991B3F00B584E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A13FDEB628991B3F00B584E7;
+			remoteInfo = TestTek;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A13FDEB728991B3F00B584E7 /* TestTek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTek.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13FDEBA28991B3F00B584E7 /* TestTekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekApp.swift; sourceTree = "<group>"; };
+		A13FDEBC28991B3F00B584E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A13FDEBE28991B4000B584E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A13FDEC128991B4000B584E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A13FDEC728991B4000B584E7 /* TestTekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13FDECB28991B4000B584E7 /* TestTekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekTests.swift; sourceTree = "<group>"; };
+		A13FDED128991B4000B584E7 /* TestTekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13FDED528991B4000B584E7 /* TestTekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITests.swift; sourceTree = "<group>"; };
+		A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A13FDEB428991B3F00B584E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13FDEC428991B4000B584E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13FDECE28991B4000B584E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A13FDEAE28991B3F00B584E7 = {
+			isa = PBXGroup;
+			children = (
+				A13FDEB928991B3F00B584E7 /* TestTek */,
+				A13FDECA28991B4000B584E7 /* TestTekTests */,
+				A13FDED428991B4000B584E7 /* TestTekUITests */,
+				A13FDEB828991B3F00B584E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A13FDEB828991B3F00B584E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDEB728991B3F00B584E7 /* TestTek.app */,
+				A13FDEC728991B4000B584E7 /* TestTekTests.xctest */,
+				A13FDED128991B4000B584E7 /* TestTekUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A13FDEB928991B3F00B584E7 /* TestTek */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDEBA28991B3F00B584E7 /* TestTekApp.swift */,
+				A13FDEBC28991B3F00B584E7 /* ContentView.swift */,
+				A13FDEBE28991B4000B584E7 /* Assets.xcassets */,
+				A13FDEC028991B4000B584E7 /* Preview Content */,
+			);
+			path = TestTek;
+			sourceTree = "<group>";
+		};
+		A13FDEC028991B4000B584E7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDEC128991B4000B584E7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A13FDECA28991B4000B584E7 /* TestTekTests */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDECB28991B4000B584E7 /* TestTekTests.swift */,
+			);
+			path = TestTekTests;
+			sourceTree = "<group>";
+		};
+		A13FDED428991B4000B584E7 /* TestTekUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A13FDED528991B4000B584E7 /* TestTekUITests.swift */,
+				A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */,
+			);
+			path = TestTekUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A13FDEB628991B3F00B584E7 /* TestTek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13FDEDB28991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTek" */;
+			buildPhases = (
+				A13FDEB328991B3F00B584E7 /* Sources */,
+				A13FDEB428991B3F00B584E7 /* Frameworks */,
+				A13FDEB528991B3F00B584E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestTek;
+			productName = TestTek;
+			productReference = A13FDEB728991B3F00B584E7 /* TestTek.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A13FDEC628991B4000B584E7 /* TestTekTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13FDEDE28991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTekTests" */;
+			buildPhases = (
+				A13FDEC328991B4000B584E7 /* Sources */,
+				A13FDEC428991B4000B584E7 /* Frameworks */,
+				A13FDEC528991B4000B584E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A13FDEC928991B4000B584E7 /* PBXTargetDependency */,
+			);
+			name = TestTekTests;
+			productName = TestTekTests;
+			productReference = A13FDEC728991B4000B584E7 /* TestTekTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A13FDED028991B4000B584E7 /* TestTekUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13FDEE128991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTekUITests" */;
+			buildPhases = (
+				A13FDECD28991B4000B584E7 /* Sources */,
+				A13FDECE28991B4000B584E7 /* Frameworks */,
+				A13FDECF28991B4000B584E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A13FDED328991B4000B584E7 /* PBXTargetDependency */,
+			);
+			name = TestTekUITests;
+			productName = TestTekUITests;
+			productReference = A13FDED128991B4000B584E7 /* TestTekUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A13FDEAF28991B3F00B584E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					A13FDEB628991B3F00B584E7 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					A13FDEC628991B4000B584E7 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = A13FDEB628991B3F00B584E7;
+					};
+					A13FDED028991B4000B584E7 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = A13FDEB628991B3F00B584E7;
+					};
+				};
+			};
+			buildConfigurationList = A13FDEB228991B3F00B584E7 /* Build configuration list for PBXProject "TestTek" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A13FDEAE28991B3F00B584E7;
+			productRefGroup = A13FDEB828991B3F00B584E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A13FDEB628991B3F00B584E7 /* TestTek */,
+				A13FDEC628991B4000B584E7 /* TestTekTests */,
+				A13FDED028991B4000B584E7 /* TestTekUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A13FDEB528991B3F00B584E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A13FDEC228991B4000B584E7 /* Preview Assets.xcassets in Resources */,
+				A13FDEBF28991B4000B584E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13FDEC528991B4000B584E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13FDECF28991B4000B584E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A13FDEB328991B3F00B584E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A13FDEBD28991B3F00B584E7 /* ContentView.swift in Sources */,
+				A13FDEBB28991B3F00B584E7 /* TestTekApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13FDEC328991B4000B584E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A13FDECC28991B4000B584E7 /* TestTekTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A13FDECD28991B4000B584E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A13FDED628991B4000B584E7 /* TestTekUITests.swift in Sources */,
+				A13FDED828991B4000B584E7 /* TestTekUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A13FDEC928991B4000B584E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A13FDEB628991B3F00B584E7 /* TestTek */;
+			targetProxy = A13FDEC828991B4000B584E7 /* PBXContainerItemProxy */;
+		};
+		A13FDED328991B4000B584E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A13FDEB628991B3F00B584E7 /* TestTek */;
+			targetProxy = A13FDED228991B4000B584E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A13FDED928991B4000B584E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A13FDEDA28991B4000B584E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A13FDEDC28991B4000B584E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestTek/Preview Content\"";
+				DEVELOPMENT_TEAM = 6928A48RP7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A13FDEDD28991B4000B584E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TestTek/Preview Content\"";
+				DEVELOPMENT_TEAM = 6928A48RP7;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A13FDEDF28991B4000B584E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6928A48RP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTek.app/TestTek";
+			};
+			name = Debug;
+		};
+		A13FDEE028991B4000B584E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6928A48RP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTekTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTek.app/TestTek";
+			};
+			name = Release;
+		};
+		A13FDEE228991B4000B584E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6928A48RP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTekUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestTek;
+			};
+			name = Debug;
+		};
+		A13FDEE328991B4000B584E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6928A48RP7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTekUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestTek;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A13FDEB228991B3F00B584E7 /* Build configuration list for PBXProject "TestTek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13FDED928991B4000B584E7 /* Debug */,
+				A13FDEDA28991B4000B584E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A13FDEDB28991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13FDEDC28991B4000B584E7 /* Debug */,
+				A13FDEDD28991B4000B584E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A13FDEDE28991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTekTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13FDEDF28991B4000B584E7 /* Debug */,
+				A13FDEE028991B4000B584E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A13FDEE128991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTekUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13FDEE228991B4000B584E7 /* Debug */,
+				A13FDEE328991B4000B584E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A13FDEAF28991B3F00B584E7 /* Project object */;
+}
