@@ -11,14 +11,19 @@ struct TemplateListView: View {
     
     @StateObject var viewModel = ViewModelFactory.generateListViewModel()
     
-    
     var body: some View {
-        VStack {
-            Text("TemplateCount \(self.viewModel.templates.count)")
-        }.onAppear() {
-            self.viewModel.startLoadingTemplate()
-        }.navigationTitle("Choose a template")
-
+            Text(self.viewModel.templates.first?.name ?? "nothing")
+            ForEach(self.viewModel.templates) { template in
+                VStack {
+                    Text(template.name)
+                }
+            }.onAppear() {
+                self.startLoading()
+            }
+        }
+    
+    func startLoading() {
+        self.viewModel.startLoadingTemplate()
     }
 }
 

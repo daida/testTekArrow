@@ -51,6 +51,7 @@ class TemplateListViewModel: ObservableObject {
                 self.mode = .ready(template)
             case .failure(let error):
                 self.mode = .error(error)
+                print(error)
             }
         }
     }
