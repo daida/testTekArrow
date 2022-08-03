@@ -108,8 +108,7 @@ class TemplateRenderView: UIView {
         case .center:
             destX =  rect.minX - (destWidth / 2.0) + (CGFloat(x) * rect.size.width)
         case .right:
-            destX = (rect.maxX - destWidth) - (CGFloat(x) * rect.size.width)
-            destX = abs(destX)
+            destX = (rect.minX - destWidth) + (CGFloat(x) * rect.size.width)
         }
         
         switch anchorV {
@@ -225,5 +224,7 @@ class TemplateRenderView: UIView {
     
     override func draw(_ rect: CGRect) {
         self.drawRect(rect: rect, template: self.templateData)
+        
+       // self.drawSquare(rect: rect, x: 1, y: 0.5, width: 0.5, height: 0.5, color: .red, anchorH: .right, anchorV: .center)
     }
 }
