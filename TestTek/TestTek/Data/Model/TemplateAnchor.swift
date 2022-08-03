@@ -34,7 +34,7 @@ enum TemplateAnchorV: String {
     case top
     
     init() {
-        self = .top
+        self = .bottom
     }
     
     init(str: String?) {
@@ -43,7 +43,7 @@ enum TemplateAnchorV: String {
         case "center": self = .center
         case "top": self = .top
         default:
-            self = .top
+            self = .bottom
         }
     }
 }

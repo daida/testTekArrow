@@ -76,7 +76,7 @@ struct TemplateData: Codable {
         let tempY: Float
         
         if container.contains(.y) == true {
-            tempY = try container.decode(Float.self, forKey: .x)
+            tempY = try container.decode(Float.self, forKey: .y)
         } else {
             tempY = 0
         }

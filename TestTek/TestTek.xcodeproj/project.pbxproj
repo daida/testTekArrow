@@ -26,12 +26,12 @@
 		A13FDEFA289955BC00B584E7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEF9289955BC00B584E7 /* StringExtension.swift */; };
 		A13FDEFD2899630A00B584E7 /* TemplateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEFC2899630A00B584E7 /* TemplateListView.swift */; };
 		A13FDF0028997F5300B584E7 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEFF28997F5300B584E7 /* TemplateView.swift */; };
-		A13FDF022899803800B584E7 /* templates.json in Resources */ = {isa = PBXBuildFile; fileRef = A13FDF012899803800B584E7 /* templates.json */; };
 		A1A9B70128998E4600C3DB8D /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B70028998E4600C3DB8D /* ColorExtension.swift */; };
 		A1A9B70728999BD900C3DB8D /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B70628999BD900C3DB8D /* TemplateViewController.swift */; };
 		A1A9B70928999C9500C3DB8D /* TemplateRenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B70828999C9500C3DB8D /* TemplateRenderView.swift */; };
 		A1A9B70B2899A8E300C3DB8D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B70A2899A8E300C3DB8D /* UIColorExtension.swift */; };
 		A1A9B70D2899B5AD00C3DB8D /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A9B70C2899B5AD00C3DB8D /* UIImageExtension.swift */; };
+		A1A9B70F2899CCA100C3DB8D /* templates.json in Resources */ = {isa = PBXBuildFile; fileRef = A1A9B70E2899CCA100C3DB8D /* templates.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +73,12 @@
 		A13FDEF9289955BC00B584E7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A13FDEFC2899630A00B584E7 /* TemplateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListView.swift; sourceTree = "<group>"; };
 		A13FDEFF28997F5300B584E7 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
-		A13FDF012899803800B584E7 /* templates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = templates.json; sourceTree = "<group>"; };
 		A1A9B70028998E4600C3DB8D /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		A1A9B70628999BD900C3DB8D /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
 		A1A9B70828999C9500C3DB8D /* TemplateRenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateRenderView.swift; sourceTree = "<group>"; };
 		A1A9B70A2899A8E300C3DB8D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A1A9B70C2899B5AD00C3DB8D /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		A1A9B70E2899CCA100C3DB8D /* templates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = templates.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +174,7 @@
 		A13FDEE428991CDA00B584E7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A13FDF012899803800B584E7 /* templates.json */,
+				A1A9B70E2899CCA100C3DB8D /* templates.json */,
 				A13FDEFE289975C100B584E7 /* Manager */,
 				A13FDEF228994A4100B584E7 /* Model */,
 			);
@@ -322,7 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A13FDF022899803800B584E7 /* templates.json in Resources */,
+				A1A9B70F2899CCA100C3DB8D /* templates.json in Resources */,
 				A13FDEC228991B4000B584E7 /* Preview Assets.xcassets in Resources */,
 				A13FDEBF28991B4000B584E7 /* Assets.xcassets in Resources */,
 			);

@@ -17,6 +17,7 @@ struct TemplateView: View {
     
     var body: some View {
         TemplateRenderViewBridge(data: template.data)
+            .navigationTitle(self.template.name)
     }
 }
 

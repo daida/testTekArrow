@@ -39,7 +39,7 @@ struct TemplateListView: View {
                     NavigationLink {
                         TemplateView(template: template)
                     } label: {
-                        Color.red
+                        TemplateView(template: template)
                             .frame(height: 200)
                     }
                 }
