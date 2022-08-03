@@ -57,7 +57,7 @@ class TemplateRenderView: UIView {
         }
     }
     
-    func drawRect(rect: CGRect, template: TemplateData, padding: Float = 0) {
+    func drawRect(rect: CGRect, template: TemplateData) {
         var color = UIColor.black
      
         let destRect = self.convertCoordinate(x: template.x,
@@ -70,23 +70,35 @@ class TemplateRenderView: UIView {
         
         var paddingRect = destRect
         
-        let wPadding = CGFloat(padding) * rect.width
-        let hPadding = CGFloat(padding) * CGFloat(rect.height)
+//        let wPadding = CGFloat(template.padding) * destRect.width
+//        let hPadding = CGFloat(template.padding) * destRect.height
+//
+//        paddingRect.origin.x += wPadding
+//        paddingRect.origin.y += hPadding
+//
+//        paddingRect.size.width -= (wPadding * 2)
+//        paddingRect.size.height -= (hPadding * 2)
         
+//        print("--------")
+//        print(padding)
+//        print(destRect)
+//        print(paddingRect)
+//        print(wPadding)
+//        print(hPadding)
         
         if let colorStr = template.backgroundColor {
             color = UIColor(hexaString: colorStr)
         }
         
         if template.media != nil {
-            self.handleImageDrawingIfNeeded(template: template, destRect: destRect)
+            self.handleImageDrawingIfNeeded(template: template, destRect: paddingRect)
         } else {
             color.setFill()
-            UIRectFill(destRect)
+            UIRectFill(paddingRect)
         }
         
         for aChild in template.children {
-            self.drawRect(rect: destRect, template: aChild, padding: template.padding)
+            self.drawRect(rect: destRect, template: aChild)
         }
         
     }
@@ -95,7 +107,9 @@ class TemplateRenderView: UIView {
                            y: Float,
                            width: Float,
                            height: Float,
-                           rect: CGRect, anchorH: TemplateAnchorH, anchorV: TemplateAnchorV) -> CGRect {
+                           rect: CGRect,
+                           anchorH: TemplateAnchorH,
+                           anchorV: TemplateAnchorV) -> CGRect {
 
         let destWidth = CGFloat(width) * rect.width
         let destHeight = CGFloat(height) * rect.height
@@ -147,8 +161,8 @@ class TemplateRenderView: UIView {
         
         var paddingRect = destRect
         
-        let vPadding = CGFloat(padding) * rect.size.height
-        let wPadding = CGFloat(padding) * rect.size.width
+        let vPadding = CGFloat(padding) * rect.size.width
+        let wPadding = CGFloat(padding) * rect.size.height
         
         paddingRect.origin.x += wPadding
         paddingRect.origin.y += vPadding
@@ -159,19 +173,39 @@ class TemplateRenderView: UIView {
         color.setFill()
         UIRectFill(paddingRect)
         
-        if color == .blue {
-            drawSquare(rect: destRect, x: 0, y: 0, width: 1, height: 1, color: .orange, anchorH: .left, anchorV: .bottom, padding: 0.1)
-         //   drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.8, height: 0.2, color: .red, anchorH: .center, anchorV: .center)
-        }
+//        if color == .blue {
+//            drawSquare(rect: destRect,
+//                       x: 0.5,
+//                       y: 0.5,
+//                       width: 0.4,
+//                       height: 0.4,
+//                       color: .orange,
+//                       anchorH: .center,
+//                       anchorV: .center,
+//                       padding: 0)
+//         //   drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.8, height: 0.2, color: .red, anchorH: .center, anchorV: .center)
+//        }
+
         
-        if color == .orange {
-            drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.8, height: 0.2, color: .green, anchorH: .center, anchorV: .center, padding: 0)
-        }
-        
-        if color == .green {
-            drawSquare(rect: destRect, x: 0, y: 0, width: 0.4375, height: 1.0, color: .magenta, anchorH: .right, anchorV: .bottom, padding: 0.1)
-            drawSquare(rect: destRect, x: 0, y: 0, width: 0.4375, height: 1.0, color: .red, anchorH: .left, anchorV: .bottom, padding: 0.1)
-        }
+//        if color == .orange {
+//            drawSquare(rect: destRect,
+//                       x: 0.5,
+//                       y: 0.5,
+//                       width: 0.4,
+//                       height: 0.4,
+//                       color: .green,
+//                       anchorH: .center,
+//                       anchorV: .center,
+//                       padding: 0.1)
+//        }
+//        if color == .orange {
+//            drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.8, height: 0.2, color: .green, anchorH: .center, anchorV: .center, padding: 0.1)
+//        }
+//
+//        if color == .green {
+//            drawSquare(rect: destRect, x: 0, y: 0, width: 0.4375, height: 1.0, color: .magenta, anchorH: .right, anchorV: .bottom, padding: 0.1)
+//            drawSquare(rect: destRect, x: 0, y: 0, width: 0.4375, height: 1.0, color: .red, anchorH: .left, anchorV: .bottom, padding: 0.1)
+//        }
 //
 //        if color == .orange {
 //            drawSquare(rect: destRect, x: 0.5, y: 0, width: 0.5, height: 0.4, color: .magenta)
@@ -179,8 +213,8 @@ class TemplateRenderView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        self.drawSquare(rect: rect, x: 0, y: 0.0, width: 1, height: 1, color: .blue, anchorH: .left, anchorV: .bottom, padding: 0)
+//        self.drawSquare(rect: rect, x: 0, y: 0.0, width: 1, height: 1, color: .blue, anchorH: .left, anchorV: .bottom, padding: 0.5)
       
-//       self.drawRect(rect: rect, template: self.templateData)
+       self.drawRect(rect: rect, template: self.templateData)
     }
 }
