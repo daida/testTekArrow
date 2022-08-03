@@ -84,7 +84,12 @@ class TemplateRenderView: UIView {
             self.drawRect(rect: destRect, template: aChild)
         }
         
-        self.dramPading(rect: destRect, pading: template.padding, color: color)
+        self.dramPading(rect: destRect,
+                        pading: template.padding,
+                        paddingTop: template.paddingTop,
+                        paddingBottom: template.paddingBottom,
+                        paddingLeft: template.paddingRight,
+                        paddingRight: template.paddingRight, color: color)
 
     }
     
@@ -188,38 +193,70 @@ class TemplateRenderView: UIView {
         context.strokePath()
     }
     
-    func dramPading(rect: CGRect, pading: Float, color: UIColor = .black) {
+    func dramPading(rect: CGRect, pading: Float,
+                    paddingTop:Float? = nil,
+                    paddingBottom: Float? = nil,
+                    paddingLeft: Float? = nil,
+                    paddingRight: Float? = nil,
+                    color: UIColor = .black) {
       
-        if let context = UIGraphicsGetCurrentContext() {
-            color.set()
+      
+         
+            let smallestSideValue = rect.size.width < rect.size.height ? rect.size.width : rect.size.height
             
-            let vPadding = (rect.size.height * (CGFloat(pading)))
-            let hPadding = rect.size.width * (CGFloat(pading))
-            
-            context.setLineWidth(vPadding)
-            context.setLineCap(.square)
+            let destPadding = CGFloat(pading) * smallestSideValue
+        
 
             // Vertical padding
             
-            context.move(to: CGPoint(x: rect.minX, y: rect.minY))
-            context.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        
+            if let paddingTop = paddingTop {
+                self.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
+                              end: CGPoint(x: rect.maxX, y: rect.minY), color: color, lineSize: CGFloat(paddingTop) * smallestSideValue)
+            } else {
+                self.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
+                              end: CGPoint(x: rect.maxX, y: rect.minY), color: color, lineSize: destPadding)
+            }
             
-            context.move(to: CGPoint(x: rect.minX, y: rect.maxY))
-            context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            if let paddingBottom = paddingBottom {
+                self.drawLine(start: CGPoint(x: rect.minX, y: rect.maxY),
+                              end: CGPoint(x: rect.maxX, y: rect.maxY), color: color, lineSize: CGFloat(paddingBottom) * smallestSideValue)
+            } else {
+                self.drawLine(start: CGPoint(x: rect.minX, y: rect.maxY),
+                              end: CGPoint(x: rect.maxX, y: rect.maxY), color: color, lineSize: destPadding)
+            }
+            
             
             // Horizontal padding
 
-            context.setLineWidth(hPadding)
+            if let paddingLeft = paddingLeft {
+                self.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
+                              end: CGPoint(x: rect.minX, y: rect.maxY), color: color, lineSize: CGFloat(paddingLeft) * smallestSideValue)
+            } else {
+                self.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
+                              end: CGPoint(x: rect.minX, y: rect.maxY), color: color, lineSize: destPadding)
+            }
             
-            context.move(to: CGPoint(x: rect.minX, y: rect.minY))
-            context.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
-            
-            context.move(to: CGPoint(x: rect.maxX, y: rect.minY))
-            context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
-            
-            
-            context.strokePath()
-          }
+            if let paddingRight = paddingRight {
+                self.drawLine(start: CGPoint(x: rect.maxX, y: rect.minY),
+                              end: CGPoint(x: rect.maxX, y: rect.maxY), color: color, lineSize: CGFloat(paddingRight) * smallestSideValue)
+            } else {
+                self.drawLine(start: CGPoint(x: rect.maxX, y: rect.minY),
+                              end: CGPoint(x: rect.maxX, y: rect.maxY), color: color, lineSize: destPadding)
+            }
+    }
+    
+    func drawLine(start: CGPoint, end: CGPoint, color: UIColor, lineSize: CGFloat) {
+        
+        if let context = UIGraphicsGetCurrentContext() {
+                context.setLineCap(.square)
+                context.setLineWidth(lineSize)
+                color.set()
+                context.move(to: start)
+                context.addLine(to: end )
+                context.strokePath()
+        }
+
     }
     
     override func draw(_ rect: CGRect) {

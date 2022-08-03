@@ -116,6 +116,30 @@ struct TemplateData: Codable {
         } else {
             self.children = []
         }
+        
+        if container.contains(.paddingTop) == true {
+            self.paddingTop = try container.decode(Float.self, forKey: .paddingTop)
+        } else {
+            self.paddingTop = nil
+        }
+        
+        if container.contains(.paddingLeft) == true {
+            self.paddingLeft = try container.decode(Float.self, forKey: .paddingLeft)
+        } else {
+            self.paddingLeft = nil
+        }
+        
+        if container.contains(.paddingRight) == true {
+            self.paddingRight = try container.decode(Float.self, forKey: .paddingRight)
+        } else {
+            self.paddingRight = nil
+        }
+        
+        if container.contains(.paddingBottom) == true {
+            self.paddingBottom = try container.decode(Float.self, forKey: .paddingBottom)
+        } else {
+            self.paddingBottom = nil
+        }
     }
     
     func encode(to encoder: Encoder) throws {
@@ -137,6 +161,11 @@ struct TemplateData: Codable {
         try container.encode(self.children, forKey: .children)
         
         try container.encode(self.mediaContentMode?.rawValue, forKey: .mediaContentMode)
+        
+        try container.encode(self.paddingBottom, forKey: .paddingBottom)
+        try container.encode(self.paddingLeft, forKey: .paddingLeft)
+        try container.encode(self.paddingRight, forKey: .paddingRight)
+        try container.encode(self.paddingTop, forKey: .paddingTop)
     }
     
     // MARK: CodingKeys
@@ -152,6 +181,11 @@ struct TemplateData: Codable {
         case anchorY = "anchor_y"
         case media
         case mediaContentMode = "media_content_mode"
+        
+        case paddingLeft = "padding_left"
+        case paddingRight = "padding_right"
+        case paddingBottom = "padding_bottom"
+        case paddingTop = "padding_top"
     }
     
     
@@ -159,7 +193,13 @@ struct TemplateData: Codable {
     let y: Float
     let width: Float
     let height: Float
+    
     let padding: Float
+    let paddingLeft: Float?
+    let paddingRight: Float?
+    let paddingTop: Float?
+    let paddingBottom: Float?
+    
     var children: [TemplateData]
 
     var anchorX: TemplateAnchorH
