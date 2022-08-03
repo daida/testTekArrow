@@ -37,9 +37,9 @@ struct TemplateListView: View {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
                 ForEach(self.viewModel.templates) { template in
                     NavigationLink {
-                        TemplateView(template: template)
+                        TemplateView(template: template, shouldDisplayTitle: true)
                     } label: {
-                        TemplateView(template: template)
+                        TemplateView(template: template, shouldDisplayTitle: false)
                             .frame(height: 200)
                     }
                 }

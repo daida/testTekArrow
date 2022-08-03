@@ -224,12 +224,6 @@ class TemplateRenderView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-//        self.drawSquare(rect: rect, x: 0, y: 0.0, width: 1, height: 1, color: .blue, anchorH: .left, anchorV: .bottom, padding: 0.5)
-      
-       self.drawRect(rect: rect, template: self.templateData)
-     //   self.drawAllPaddings(template: templateData, rect: rect)
-        
-       // self.dramPading(rect: rect, pading: 0.3)
-        
+        self.drawRect(rect: rect, template: self.templateData)
     }
 }
