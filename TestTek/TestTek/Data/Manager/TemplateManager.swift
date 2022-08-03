@@ -25,35 +25,35 @@ struct TemplateManager: TemplateManagerInterface {
     }
     
     func getTemplates(onCompletion: @escaping (Result<[Template], TemplateServiceError>) -> Void) {
-//        self.apiService.getTemplate { result in
-//            switch result {
-//            case .failure(let error): onCompletion(.failure(.APIServiceError(error: error)))
-//            case .success(let data):
-//                self.queue.async {
-//                    do {
-//
-//                        let dico = try self.jsonDecoder.decode([String : [Template]].self, from: data)
-//
-//                        guard let dest = dico["templates"] else {
-//                            onCompletion(.failure(.noData))
-//                            return
-//                        }
-//
-//                        onCompletion(.success(dest))
-//                    } catch {
-//                        self.queue.async {
-//                            onCompletion(.failure(.SerialisationError(error: error)))
-//                        }
-//                    }
-//                }
-//            }
-//        }
-    
-        guard let jsonURL = Bundle.main.url(forResource: "templates", withExtension: "json") else { return }
+        self.apiService.getTemplate { result in
+            switch result {
+            case .failure(let error): onCompletion(.failure(.APIServiceError(error: error)))
+            case .success(let data):
+                self.queue.async {
+                    do {
 
-        let data = try! Data(contentsOf: jsonURL)
-        let dico = try! self.jsonDecoder.decode([String : [Template]].self, from: data)
-        onCompletion(.success(dico["templates"]!))
+                        let dico = try self.jsonDecoder.decode([String : [Template]].self, from: data)
+
+                        guard let dest = dico["templates"] else {
+                            onCompletion(.failure(.noData))
+                            return
+                        }
+
+                        onCompletion(.success(dest))
+                    } catch {
+                        self.queue.async {
+                            onCompletion(.failure(.SerialisationError(error: error)))
+                        }
+                    }
+                }
+            }
+        }
+    
+//        guard let jsonURL = Bundle.main.url(forResource: "templates", withExtension: "json") else { return }
+//
+//        let data = try! Data(contentsOf: jsonURL)
+//        let dico = try! self.jsonDecoder.decode([String : [Template]].self, from: data)
+//        onCompletion(.success(dico["templates"]!))
 
         
     }

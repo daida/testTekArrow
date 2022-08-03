@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import CoreGraphics
 
 struct TemplateRenderViewBridge: UIViewRepresentable {
     var data: TemplateData
@@ -67,40 +68,24 @@ class TemplateRenderView: UIView {
                                               rect: rect,
                                               anchorH: template.anchorX,
                                               anchorV: template.anchorY)
-        
-        var paddingRect = destRect
-        
-//        let wPadding = CGFloat(template.padding) * destRect.width
-//        let hPadding = CGFloat(template.padding) * destRect.height
-//
-//        paddingRect.origin.x += wPadding
-//        paddingRect.origin.y += hPadding
-//
-//        paddingRect.size.width -= (wPadding * 2)
-//        paddingRect.size.height -= (hPadding * 2)
-        
-//        print("--------")
-//        print(padding)
-//        print(destRect)
-//        print(paddingRect)
-//        print(wPadding)
-//        print(hPadding)
-        
+                
         if let colorStr = template.backgroundColor {
             color = UIColor(hexaString: colorStr)
         }
         
         if template.media != nil {
-            self.handleImageDrawingIfNeeded(template: template, destRect: paddingRect)
+            self.handleImageDrawingIfNeeded(template: template, destRect: destRect)
         } else {
             color.setFill()
-            UIRectFill(paddingRect)
+            UIRectFill(destRect)
         }
         
         for aChild in template.children {
             self.drawRect(rect: destRect, template: aChild)
         }
         
+        self.dramPading(rect: destRect, pading: template.padding, color: color)
+
     }
     
     func convertCoordinate(x:Float,
@@ -159,62 +144,66 @@ class TemplateRenderView: UIView {
                                               anchorH: anchorH,
                                               anchorV: anchorV)
         
-        var paddingRect = destRect
-        
-        let vPadding = CGFloat(padding) * rect.size.width
-        let wPadding = CGFloat(padding) * rect.size.height
-        
-        paddingRect.origin.x += wPadding
-        paddingRect.origin.y += vPadding
-        paddingRect.size.width -= (wPadding * 2)
-        paddingRect.size.height -= (vPadding * 2)
-        
+       
         
         color.setFill()
-        UIRectFill(paddingRect)
+        UIRectFill(destRect)
         
-//        if color == .blue {
-//            drawSquare(rect: destRect,
-//                       x: 0.5,
-//                       y: 0.5,
-//                       width: 0.4,
-//                       height: 0.4,
-//                       color: .orange,
-//                       anchorH: .center,
-//                       anchorV: .center,
-//                       padding: 0)
-//         //   drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.8, height: 0.2, color: .red, anchorH: .center, anchorV: .center)
-//        }
+        if color == .blue {
+            self.dramPading(rect: destRect, pading: 0.2, color: .red)
+            self.drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.5, height: 0.5, color: .green, anchorH: .center, anchorV: .center)
+        }
+        
+        if color == .green {
+            self.drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.5, height: 0.5, color: .yellow, anchorH: .center, anchorV: .center)
+            self.dramPading(rect: destRect, pading: 0.1, color: .orange)
+        }
+        
+ 
 
-        
-//        if color == .orange {
-//            drawSquare(rect: destRect,
-//                       x: 0.5,
-//                       y: 0.5,
-//                       width: 0.4,
-//                       height: 0.4,
-//                       color: .green,
-//                       anchorH: .center,
-//                       anchorV: .center,
-//                       padding: 0.1)
-//        }
-//        if color == .orange {
-//            drawSquare(rect: destRect, x: 0.5, y: 0.5, width: 0.8, height: 0.2, color: .green, anchorH: .center, anchorV: .center, padding: 0.1)
-//        }
-//
-//        if color == .green {
-//            drawSquare(rect: destRect, x: 0, y: 0, width: 0.4375, height: 1.0, color: .magenta, anchorH: .right, anchorV: .bottom, padding: 0.1)
-//            drawSquare(rect: destRect, x: 0, y: 0, width: 0.4375, height: 1.0, color: .red, anchorH: .left, anchorV: .bottom, padding: 0.1)
-//        }
-//
-//        if color == .orange {
-//            drawSquare(rect: destRect, x: 0.5, y: 0, width: 0.5, height: 0.4, color: .magenta)
-//        }
+    }
+    
+    func dramPading(rect: CGRect, pading: Float, color: UIColor = .black) {
+      
+        if let context = UIGraphicsGetCurrentContext() {
+            color.set()
+            
+            let vPadding = (rect.size.height * (CGFloat(pading)))
+            let hPadding = rect.size.width * (CGFloat(pading))
+            
+            context.setLineWidth(vPadding)
+            context.setLineCap(.square)
+
+            // Vertical padding
+            
+            context.move(to: CGPoint(x: rect.minX, y: rect.minY))
+            context.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+            
+            context.move(to: CGPoint(x: rect.minX, y: rect.maxY))
+            context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            
+            // Horizontal padding
+
+            context.setLineWidth(hPadding)
+            
+            context.move(to: CGPoint(x: rect.minX, y: rect.minY))
+            context.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+            
+            context.move(to: CGPoint(x: rect.maxX, y: rect.minY))
+            context.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            
+            
+            context.strokePath()
+          }
     }
     
     override func draw(_ rect: CGRect) {
 //        self.drawSquare(rect: rect, x: 0, y: 0.0, width: 1, height: 1, color: .blue, anchorH: .left, anchorV: .bottom, padding: 0.5)
       
        self.drawRect(rect: rect, template: self.templateData)
+     //   self.drawAllPaddings(template: templateData, rect: rect)
+        
+       // self.dramPading(rect: rect, pading: 0.3)
+        
     }
 }
