@@ -163,6 +163,32 @@ class TemplateRenderView: UIView {
 
     }
     
+    func drawHairline(in context: CGContext, scale: CGFloat, color: CGColor, point1: CGPoint, point2: CGPoint) {
+
+        // pick which row/column of pixels to treat as the "center" of a point
+        // through which to draw lines -- favor true center for odd scales, or
+        // offset to the side for even scales so we fall on pixel boundaries
+        let center: CGFloat
+        if Int(scale) % 2 == 0 {
+            center = 1 / (scale * 2)
+        } else {
+            center = 0
+        }
+
+        let offset = 0.5 - center // use the "center" choice to create an offset
+        let p1 = CGPoint(x: 50 + offset, y: 50 + offset)
+        let p2 = CGPoint(x: 50 + offset, y: 75 + offset)
+
+        // draw line of minimal stroke width
+        let width = 1 / scale
+        context.setLineWidth(width)
+        context.setStrokeColor(color)
+        context.beginPath()
+        context.move(to: p1)
+        context.addLine(to: p2)
+        context.strokePath()
+    }
+    
     func dramPading(rect: CGRect, pading: Float, color: UIColor = .black) {
       
         if let context = UIGraphicsGetCurrentContext() {

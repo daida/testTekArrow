@@ -28,20 +28,20 @@
 						"y": 0.5,
 						"anchor_x": "center",
 						"anchor_y": "center",
-						"background_color": "#8E1E80",
+						"background_color": "#6BA2F7",
 						"padding": 0.1,
 						"children": [
 							{
 								"width": 0.4375,
 								"height": 1,
-								"background_color": "#EF010F"
+								"background_color": "#73D3A2"
 							},
 							{
 								"x": 0,
 								"width": 0.4375,
 								"height": 1,
 								"anchor_x": "right",
-								"background_color": "#8DB600"
+								"background_color": "#73D3A2"
 							}
 						]
 					}
