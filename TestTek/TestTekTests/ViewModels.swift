@@ -11,7 +11,6 @@ import Combine
 @testable import TestTek
 
 class ViewModels: XCTestCase {
-
     
     func testTemplateViewModel() {
         let templateManager = TemplateManager(apiService: APIMock())
@@ -55,7 +54,6 @@ class ViewModels: XCTestCase {
         
       
         viewModel.$shouldDisplayLoaderView.sink { state in
-            print(state)
             if state == true {
                 loadingExp.fulfill()
             }
