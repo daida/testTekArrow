@@ -8,7 +8,6 @@
 import Foundation
 
 struct TemplateArchiver: TemplateArchiverInterface {
-    
     func retriveTemplate(onCompletion: @escaping ([Template]?) -> Void) {
         guard
             let dataPathURL = self.archivefilePath,
