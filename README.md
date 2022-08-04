@@ -1,4 +1,4 @@
-This App should render template From JSON File.
+This App should render templates From JSON File.
 
 The Render part is made in UIView draw rect by using UIGraphics methods.
 
