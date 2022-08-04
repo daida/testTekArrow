@@ -10,6 +10,9 @@ The App is based on MVVM architecture patern, and use OOP and dependency injecti
 on cached templates.)
 - User can long press on template on list or in detail view to share a picture of their template.
 
+Package Manage SPM
+Dependency: Reachability
+
 Unit test coverage:
 
 - model Parsing
