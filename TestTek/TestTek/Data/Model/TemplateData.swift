@@ -40,7 +40,7 @@ struct TemplateData: TemplateDataInterface, Codable, Identifiable {
         // Here we handle default value
         
         if container.contains(.backgroundColor) == true {
-            self.backgroundColor = try container.decode(String.self, forKey: .backgroundColor)
+            self.backgroundColor = try container.decode(String?.self, forKey: .backgroundColor)
         } else {
             self.backgroundColor = nil
         }
@@ -94,7 +94,7 @@ struct TemplateData: TemplateDataInterface, Codable, Identifiable {
         }
                 
         if container.contains(.media) == true {
-            self.media = try container.decode(String.self, forKey: .media)
+            self.media = try container.decode(String?.self, forKey: .media)
         } else {
             self.media = nil
         }
@@ -112,7 +112,7 @@ struct TemplateData: TemplateDataInterface, Codable, Identifiable {
         }
 
         if container.contains(.mediaContentMode) {
-            self.mediaContentMode = TemplateMediaContentMode(str: try container.decode(String.self, forKey: .mediaContentMode))
+            self.mediaContentMode = TemplateMediaContentMode(str: try container.decode(String?.self, forKey: .mediaContentMode))
         } else {
             self.mediaContentMode = nil
         }
@@ -124,25 +124,25 @@ struct TemplateData: TemplateDataInterface, Codable, Identifiable {
         }
         
         if container.contains(.paddingTop) == true {
-            self.paddingTop = try container.decode(Float.self, forKey: .paddingTop)
+            self.paddingTop = try container.decode(Float?.self, forKey: .paddingTop)
         } else {
             self.paddingTop = nil
         }
         
         if container.contains(.paddingLeft) == true {
-            self.paddingLeft = try container.decode(Float.self, forKey: .paddingLeft)
+            self.paddingLeft = try container.decode(Float?.self, forKey: .paddingLeft)
         } else {
             self.paddingLeft = nil
         }
         
         if container.contains(.paddingRight) == true {
-            self.paddingRight = try container.decode(Float.self, forKey: .paddingRight)
+            self.paddingRight = try container.decode(Float?.self, forKey: .paddingRight)
         } else {
             self.paddingRight = nil
         }
         
         if container.contains(.paddingBottom) == true {
-            self.paddingBottom = try container.decode(Float.self, forKey: .paddingBottom)
+            self.paddingBottom = try container.decode(Float?.self, forKey: .paddingBottom)
         } else {
             self.paddingBottom = nil
         }

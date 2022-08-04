@@ -42,6 +42,7 @@
 		A1C0E7EB289BFC7A006375DD /* DrawTesterTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0E7EA289BFC7A006375DD /* DrawTesterTool.swift */; };
 		A1C0E7ED289C002E006375DD /* apiIPhone13ProMax.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C0E7EC289BFF3D006375DD /* apiIPhone13ProMax.json */; };
 		A1C0E7F3289C042E006375DD /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0E7F2289C042E006375DD /* ViewModels.swift */; };
+		A1C0E7F5289C1585006375DD /* TemplateArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0E7F4289C1585006375DD /* TemplateArchiver.swift */; };
 		A1DC4CFB289B18F700CA94CE /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4CFA289B18F700CA94CE /* Drawer.swift */; };
 		A1DC4CFD289B2CBA00CA94CE /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4CFC289B2CBA00CA94CE /* TemplateViewModel.swift */; };
 		A1DC4D03289B3ED100CA94CE /* RenderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4D02289B3ED100CA94CE /* RenderViewViewModel.swift */; };
@@ -102,6 +103,7 @@
 		A1C0E7EA289BFC7A006375DD /* DrawTesterTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawTesterTool.swift; sourceTree = "<group>"; };
 		A1C0E7EC289BFF3D006375DD /* apiIPhone13ProMax.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apiIPhone13ProMax.json; sourceTree = "<group>"; };
 		A1C0E7F2289C042E006375DD /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModels.swift; path = TestTekTests/ViewModels.swift; sourceTree = SOURCE_ROOT; };
+		A1C0E7F4289C1585006375DD /* TemplateArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateArchiver.swift; sourceTree = "<group>"; };
 		A1DC4CFA289B18F700CA94CE /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		A1DC4CFC289B2CBA00CA94CE /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
 		A1DC4D02289B3ED100CA94CE /* RenderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderViewViewModel.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				A13FDEE528991D4400B584E7 /* APIService.swift */,
 				A13FDEEA2899263C00B584E7 /* TemplateManager.swift */,
 				A1DC4D06289B4B8F00CA94CE /* APIServiceInterface.swift */,
+				A1C0E7F4289C1585006375DD /* TemplateArchiver.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				A13FDEF1289946E500B584E7 /* ViewModelFactory.swift in Sources */,
 				A13FDEFA289955BC00B584E7 /* StringExtension.swift in Sources */,
 				A13FDEF828994AD700B584E7 /* TemplateMediaContentMode.swift in Sources */,
+				A1C0E7F5289C1585006375DD /* TemplateArchiver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

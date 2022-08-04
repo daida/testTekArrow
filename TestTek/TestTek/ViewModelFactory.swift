@@ -11,10 +11,12 @@ struct ViewModelFactory {
     
     private static let appDrawer = Drawer.self
     private static let apiService = APIService()
-    private let templateManager: TemplateManager
+    private static let archiver = TemplateArchiver()
     
     static func generateListViewModel() -> TemplateListViewModel {
-        return TemplateListViewModel(templateManager: TemplateManager(apiService: ViewModelFactory.apiService))
+        return TemplateListViewModel(templateManager: TemplateManager(apiService:
+                                                                        ViewModelFactory.apiService,
+                                                                      archiver: archiver))
     }
     
     static func generateTemplateViewViewModel(template: TemplateInterface, shouldDisplayName: Bool) -> TemplateViewModelInterface {

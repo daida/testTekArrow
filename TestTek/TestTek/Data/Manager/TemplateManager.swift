@@ -15,34 +15,70 @@ struct TemplateManager: TemplateManagerInterface {
     
     private let jsonDecoder = JSONDecoder()
     
+    private let archiver: TemplateArchiverInterface
+    
     var timeOutRequest: Int {
         get { self.apiService.requestTimeOut }
         set { self.apiService.requestTimeOut = newValue }
     }
     
-    init(apiService: APIServiceInterface) {
+    init(apiService: APIServiceInterface, archiver: TemplateArchiverInterface) {
         self.apiService = apiService
+        self.archiver = archiver
+    }
+    
+    func getCachedTemplate(onCompletion: @escaping ([Template]?) -> Void) {
+        self.archiver.retriveTemplate { template in
+            guard
+                let template = template,
+                    template.isEmpty == false else {
+                onCompletion(nil)
+                return
+            }
+            onCompletion(template)
+        }
     }
     
     func getTemplates(onCompletion: @escaping (Result<[TemplateInterface], TemplateServiceError>) -> Void) {
         self.apiService.getTemplate { result in
             switch result {
-            case .failure(let error): onCompletion(.failure(.APIServiceError(error: error)))
+            case .failure(let error):
+                self.getCachedTemplate { cachedTemplates in
+                    guard let cachedTemplates = cachedTemplates else {
+                        onCompletion(.failure(.APIServiceError(error: error)))
+                        return
+                    }
+                    onCompletion(.success(cachedTemplates))
+                }
+
             case .success(let data):
                 self.queue.async {
                     do {
-
                         let dico = try self.jsonDecoder.decode([String : [Template]].self, from: data)
 
                         guard let dest = dico["templates"] else {
-                            onCompletion(.failure(.noData))
+                            
+                            self.getCachedTemplate { cachedTemplate in
+                                guard let cachedTemplate = cachedTemplate else {
+                                    onCompletion(.failure(.noData))
+                                    return
+                                }
+                                onCompletion(.success(cachedTemplate))
+                            }
                             return
                         }
-
+                        self.archiver.save(template: dest)
                         onCompletion(.success(dest))
                     } catch {
                         self.queue.async {
-                            onCompletion(.failure(.SerialisationError(error: error)))
+                            
+                            self.getCachedTemplate { cachedTemplates in
+                                guard let cachedTemplates = cachedTemplates else {
+                                    onCompletion(.failure(.SerialisationError(error: error)))
+                                    return
+                                }
+                                onCompletion(.success(cachedTemplates))
+                            }
                         }
                     }
                 }
@@ -54,8 +90,6 @@ struct TemplateManager: TemplateManagerInterface {
 //        let data = try! Data(contentsOf: jsonURL)
 //        let dico = try! self.jsonDecoder.decode([String : [Template]].self, from: data)
 //        onCompletion(.success(dico["templates"]!))
-
-        
     }
     
 }
