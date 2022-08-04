@@ -50,6 +50,7 @@ class TemplateListViewModel: ObservableObject {
     }
     
     func startLoadingTemplate() {
+        self.shouldDisplayLoaderView = true
         self.manager.getTemplates { [weak self] result in
             guard let `self` = self else { return }
             switch result {

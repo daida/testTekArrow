@@ -13,17 +13,21 @@ struct TemplateListView: View {
     
     var body: some View {
         VStack {
-            if viewModel.shouldDisplayLoaderView == true {
+            if viewModel.templatesViewModels.isEmpty == false {
+                self.generateListView()
+            }
+            else if viewModel.shouldDisplayLoaderView == true {
                 ProgressView()
                     .progressViewStyle(.circular)
             } else if let message = viewModel.errorMessageText {
                 Button(message) {
                     self.startLoading()
                 }
-            } else {
-                self.generateListView()
             }
-        }.navigationTitle("Choose a template")
+        }.onAppear() {
+            self.viewModel.startLoadingTemplate()
+        }
+        .navigationTitle("Choose a template")
             .alert(isPresented: $viewModel.shouldDisplayAlertView) {
                 Alert(title: Text(self.viewModel.errorMessageText ?? ""),
                       message: Text("Retry?"),
@@ -44,8 +48,6 @@ struct TemplateListView: View {
                     }
                 }
             }.padding()
-        }.onAppear() {
-            self.viewModel.startLoadingTemplate()
         }
     }
     

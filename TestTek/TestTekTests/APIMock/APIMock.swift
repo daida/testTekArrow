@@ -21,7 +21,10 @@ struct APIMock: APIServiceInterface {
     }
     
     func getTemplate(onCompletion: @escaping (Result<Data, APIServiceError>) -> Void) {
-        guard let jsonURL = Bundle.main.url(forResource: self.fileToUse, withExtension: "json") else { return }
+        guard let jsonURL = Bundle.main.url(forResource: self.fileToUse, withExtension: "json") else {
+            onCompletion(.failure(.noData(originalError: nil)))
+            return
+        }
         
         guard let data = try? Data(contentsOf: jsonURL) else {
             onCompletion(.failure(.noData(originalError: nil)))
