@@ -43,6 +43,7 @@
 		A1C0E7ED289C002E006375DD /* apiIPhone13ProMax.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C0E7EC289BFF3D006375DD /* apiIPhone13ProMax.json */; };
 		A1C0E7F3289C042E006375DD /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0E7F2289C042E006375DD /* ViewModels.swift */; };
 		A1C0E7F5289C1585006375DD /* TemplateArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0E7F4289C1585006375DD /* TemplateArchiver.swift */; };
+		A1C0E7FA289C288C006375DD /* Archiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0E7F9289C288C006375DD /* Archiver.swift */; };
 		A1DC4CFB289B18F700CA94CE /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4CFA289B18F700CA94CE /* Drawer.swift */; };
 		A1DC4CFD289B2CBA00CA94CE /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4CFC289B2CBA00CA94CE /* TemplateViewModel.swift */; };
 		A1DC4D03289B3ED100CA94CE /* RenderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4D02289B3ED100CA94CE /* RenderViewViewModel.swift */; };
@@ -104,6 +105,7 @@
 		A1C0E7EC289BFF3D006375DD /* apiIPhone13ProMax.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apiIPhone13ProMax.json; sourceTree = "<group>"; };
 		A1C0E7F2289C042E006375DD /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModels.swift; path = TestTekTests/ViewModels.swift; sourceTree = SOURCE_ROOT; };
 		A1C0E7F4289C1585006375DD /* TemplateArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateArchiver.swift; sourceTree = "<group>"; };
+		A1C0E7F9289C288C006375DD /* Archiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archiver.swift; sourceTree = "<group>"; };
 		A1DC4CFA289B18F700CA94CE /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		A1DC4CFC289B2CBA00CA94CE /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
 		A1DC4D02289B3ED100CA94CE /* RenderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderViewViewModel.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		A13FDECA28991B4000B584E7 /* TestTekTests */ = {
 			isa = PBXGroup;
 			children = (
+				A1C0E7F6289C2749006375DD /* Archiver */,
 				A1C0E7F1289C0128006375DD /* ViewModels */,
 				A1C0E7F0289C00B6006375DD /* Drawer */,
 				A1C0E7EE289C0071006375DD /* Parsing */,
@@ -297,6 +300,14 @@
 				A1C0E7F2289C042E006375DD /* ViewModels.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A1C0E7F6289C2749006375DD /* Archiver */ = {
+			isa = PBXGroup;
+			children = (
+				A1C0E7F9289C288C006375DD /* Archiver.swift */,
+			);
+			path = Archiver;
 			sourceTree = "<group>";
 		};
 		A1DC4CFE289B3E7500CA94CE /* View */ = {
@@ -511,6 +522,7 @@
 				A1C0E7EB289BFC7A006375DD /* DrawTesterTool.swift in Sources */,
 				A1C0E7F3289C042E006375DD /* ViewModels.swift in Sources */,
 				A13FDECC28991B4000B584E7 /* ParsingTests.swift in Sources */,
+				A1C0E7FA289C288C006375DD /* Archiver.swift in Sources */,
 				A1C0E7E0289BCDFA006375DD /* ExpectationRefFactory.swift in Sources */,
 				A1C0E7E2289BCF79006375DD /* ExpectationAPIFactory.swift in Sources */,
 				A1C0E7E4289BE144006375DD /* DrawerTest.swift in Sources */,

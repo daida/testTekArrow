@@ -42,7 +42,7 @@ struct TemplateArchiver: TemplateArchiverInterface {
         self.createDirecoryIfNoPresent()
     }
     
-    var archivefilePath: URL? {
+    private var archivefilePath: URL? {
         guard let folderPath = archivePath else { return nil }
         return folderPath.appendingPathComponent("templates.json")
     }
@@ -56,13 +56,15 @@ struct TemplateArchiver: TemplateArchiverInterface {
         }
     }
     
-    func save(template: [Template]) {
+    func save(template: [Template], onCompletion: ((Bool) -> Void)?) {
         guard let data = try? self.jsonEncoder.encode(template),
-              let path = self.archivefilePath else { return }
+              let path = self.archivefilePath else { onCompletion?(false); return }
         self.queue.async {
             do {
                 try data.write(to: path)
+                onCompletion?(true)
             } catch {
+                onCompletion?(false)
                 print(error)
             }
         }
@@ -70,6 +72,6 @@ struct TemplateArchiver: TemplateArchiverInterface {
 }
 
 protocol TemplateArchiverInterface {
-    func save(template: [Template])
+    func save(template: [Template], onCompletion: ((Bool) -> Void)?)
     func retriveTemplate(onCompletion: @escaping ([Template]?) -> Void)
 }

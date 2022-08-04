@@ -27,7 +27,7 @@ struct TemplateManager: TemplateManagerInterface {
         self.archiver = archiver
     }
     
-    func getCachedTemplate(onCompletion: @escaping ([Template]?) -> Void) {
+    private func getCachedTemplate(onCompletion: @escaping ([Template]?) -> Void) {
         guard let archiver = archiver else {
             onCompletion(nil)
             return
@@ -72,7 +72,7 @@ struct TemplateManager: TemplateManagerInterface {
                             }
                             return
                         }
-                        self.archiver?.save(template: dest)
+                        self.archiver?.save(template: dest, onCompletion: nil)
                         onCompletion(.success(dest))
                     } catch {
                         self.queue.async {
