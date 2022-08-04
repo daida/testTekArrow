@@ -24,7 +24,7 @@ struct TemplateManager: TemplateManagerInterface {
         self.apiService = apiService
     }
     
-    func getTemplates(onCompletion: @escaping (Result<[Template], TemplateServiceError>) -> Void) {
+    func getTemplates(onCompletion: @escaping (Result<[TemplateInterface], TemplateServiceError>) -> Void) {
         self.apiService.getTemplate { result in
             switch result {
             case .failure(let error): onCompletion(.failure(.APIServiceError(error: error)))
@@ -61,7 +61,7 @@ struct TemplateManager: TemplateManagerInterface {
 }
 
 protocol TemplateManagerInterface {
-    func getTemplates(onCompletion: @escaping (Result<[Template], TemplateServiceError>) -> Void)
+    func getTemplates(onCompletion: @escaping (Result<[TemplateInterface], TemplateServiceError>) -> Void)
     var timeOutRequest: Int { get set }
 }
 
@@ -90,3 +90,4 @@ enum TemplateServiceError: Error {
         }
     }
 }
+

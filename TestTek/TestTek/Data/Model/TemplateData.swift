@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TemplateData: Codable {
+struct TemplateData: TemplateDataInterface, Codable, Identifiable {
     
     private static func isOutOfBound(_ toCheck: Float) -> Bool {
         if toCheck < 0 || toCheck > 1 { return true }
@@ -16,6 +16,12 @@ struct TemplateData: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        if container.contains(.id) {
+            self.id = try container.decode(UUID.self, forKey: .id)
+        } else {
+            self.id = UUID()
+        }
         
         self.width = try container.decode(Float.self, forKey: .width)
         self.height = try container.decode(Float.self, forKey: .height)
@@ -158,7 +164,10 @@ struct TemplateData: Codable {
         try container.encode(self.anchorY.rawValue, forKey: .anchorY)
         
         try container.encode(self.media, forKey: .media)
-        try container.encode(self.children, forKey: .children)
+        
+        if let children = self.children as? [TemplateData] {
+            try container.encode(children, forKey: .children)
+        }
         
         try container.encode(self.mediaContentMode?.rawValue, forKey: .mediaContentMode)
         
@@ -166,6 +175,7 @@ struct TemplateData: Codable {
         try container.encode(self.paddingLeft, forKey: .paddingLeft)
         try container.encode(self.paddingRight, forKey: .paddingRight)
         try container.encode(self.paddingTop, forKey: .paddingTop)
+        try container.encode(self.id, forKey: .id)
     }
     
     // MARK: CodingKeys
@@ -181,7 +191,7 @@ struct TemplateData: Codable {
         case anchorY = "anchor_y"
         case media
         case mediaContentMode = "media_content_mode"
-        
+        case id
         case paddingLeft = "padding_left"
         case paddingRight = "padding_right"
         case paddingBottom = "padding_bottom"
@@ -189,6 +199,7 @@ struct TemplateData: Codable {
     }
     
     
+    let id: UUID
     let x: Float
     let y: Float
     let width: Float
@@ -200,18 +211,43 @@ struct TemplateData: Codable {
     let paddingTop: Float?
     let paddingBottom: Float?
     
-    var children: [TemplateData]
+    let children: [TemplateDataInterface]
 
-    var anchorX: TemplateAnchorH
-    var anchorY: TemplateAnchorV
+    let anchorX: TemplateAnchorH
+    let anchorY: TemplateAnchorV
     
  
     let backgroundColor: String?
-    var media: String?
-    var mediaContentMode: TemplateMediaContentMode?
+    let media: String?
+    let mediaContentMode: TemplateMediaContentMode?
 }
 
 enum TemplateSerializationError: Error {
     case outOfBounds
     case wrongStringFormat
+}
+
+
+protocol TemplateDataInterface {
+    var id: UUID { get }
+    var x: Float { get }
+    var y: Float { get }
+    var width: Float { get }
+    var height: Float { get }
+    
+    var padding: Float { get }
+    var paddingLeft: Float? { get }
+    var paddingRight: Float? { get }
+    var paddingTop: Float? { get }
+    var paddingBottom: Float? { get }
+    
+    var children: [TemplateDataInterface] { get }
+
+    var anchorX: TemplateAnchorH { get }
+    var anchorY: TemplateAnchorV { get }
+    
+ 
+    var backgroundColor: String? { get }
+    var media: String? { get }
+    var mediaContentMode: TemplateMediaContentMode? { get }
 }

@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Template: Codable, Identifiable {
+struct Template: TemplateInterface, Codable {
+   
     let name: String
-    let data: TemplateData
+    let data: TemplateDataInterface
     var id: UUID
     
     private enum CodingKeys : String, CodingKey {
@@ -28,7 +29,22 @@ struct Template: Codable, Identifiable {
             self.id = UUID()
         }
     }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(name, forKey: CodingKeys.name)
+        try container.encode(id, forKey: CodingKeys.id)
+        
+        if let data = data as? TemplateData {
+            try container.encode(data, forKey: .data)
+        }
+    }
 }
 
-
    
+
+protocol TemplateInterface {
+    var name: String { get }
+    var data: TemplateDataInterface { get }
+    var id: UUID { get }
+}

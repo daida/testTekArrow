@@ -16,7 +16,7 @@ class TemplateListViewModel: ObservableObject {
     }
     
     @Published var shouldDisplayLoaderView: Bool = false
-    @Published var templates: [Template] = []
+    @Published var templatesViewModels: [TemplateViewModelInterface] = []
     @Published var errorMessageText: String? = nil
     @Published var shouldDisplayAlertView = false
     
@@ -26,16 +26,18 @@ class TemplateListViewModel: ObservableObject {
             case .loading:
                 self.shouldDisplayAlertView = false
                 self.shouldDisplayLoaderView = true
-                self.templates = []
+                self.templatesViewModels = []
                 self.errorMessageText = nil
             case .error(let templateError):
                 self.shouldDisplayAlertView = true
                 self.errorMessageText = templateError.userReadableText
-                self.templates = []
+                self.templatesViewModels = []
                 self.shouldDisplayLoaderView = false
             case .ready(let templates):
                 self.shouldDisplayAlertView = false
-                self.templates = templates
+                self.templatesViewModels = templates
+                    .compactMap { ViewModelFactory.generateTemplateViewViewModel(template: $0,
+                                                                                 shouldDisplayName: false) }
                 self.errorMessageText = nil
                 self.shouldDisplayLoaderView = false
             }
@@ -60,10 +62,10 @@ class TemplateListViewModel: ObservableObject {
     }
 }
 
-extension TemplateListViewModel {
+private extension TemplateListViewModel {
     enum Mode {
         case loading
-        case ready([Template])
+        case ready([TemplateInterface])
         case error(TemplateServiceError)
     }
 }

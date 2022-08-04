@@ -35,11 +35,11 @@ struct TemplateListView: View {
     func generateListView() -> some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
-                ForEach(self.viewModel.templates) { template in
+                ForEach(self.viewModel.templatesViewModels, id: \.id) { templateViewModel in
                     NavigationLink {
-                        TemplateView(template: template, shouldDisplayTitle: true)
+                        TemplateView(viewModel: templateViewModel.generateCopyWith(shouldDisplayName: true))
                     } label: {
-                        TemplateView(template: template, shouldDisplayTitle: false)
+                        TemplateView(viewModel: templateViewModel)
                             .frame(height: 200)
                     }
                 }

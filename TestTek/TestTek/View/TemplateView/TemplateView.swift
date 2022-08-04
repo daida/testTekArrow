@@ -9,20 +9,18 @@ import SwiftUI
 
 struct TemplateView: View {
     
-    let template: Template
-    let shouldDisplayTitle: Bool
+    let viewModel: TemplateViewModelInterface
     
-    init(template: Template, shouldDisplayTitle: Bool) {
-        self.template = template
-        self.shouldDisplayTitle = shouldDisplayTitle
+    init(viewModel: TemplateViewModelInterface) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
-        if shouldDisplayTitle == true {
-            TemplateRenderViewBridge(data: template.data)
-                .navigationTitle(template.name)
+        if self.viewModel.shouldDisplayName == true {
+            TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel())
+                .navigationTitle(self.viewModel.name)
         } else {
-            TemplateRenderViewBridge(data: template.data)
+            TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel())
         }
 
     }
@@ -40,6 +38,8 @@ struct TemplateView_Previews: PreviewProvider {
         
         let firstTemplate = dico["templates"]!.first!
         
-        TemplateView(template: firstTemplate, shouldDisplayTitle: false)
+        let viewModel = TemplateViewModel(drawer: Drawer.self, template: firstTemplate, shouldDisplayName: false)
+        
+        TemplateView(viewModel: viewModel)
     }
 }
