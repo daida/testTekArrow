@@ -6,8 +6,9 @@ The Interface part is done with SwiftUI.
 
 The App is based on MVVM architecture patern, and use OOP and dependency injection.
 
-Templates are cached in order to be retrived if there is no internet connection. (if there is internet we always try to fetch new template then fallback
+- Templates are cached in order to be retrived if there is no internet connection. (if there is internet we always try to fetch new template then fallback
 on cached templates.)
+- User can long press on template on list or in detail view to share a picture of their template.
 
 Unit test coverage:
 
