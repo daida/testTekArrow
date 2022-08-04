@@ -14,7 +14,7 @@ class DrawerTest: XCTestCase {
     func testFramWith(jsonName: String, refFrames: (frames: [String: [CGRect]],
                                                 screenRect: CGRect)) throws {
         let api = APIMock(fileToUse: jsonName)
-        let manager = TemplateManager(apiService: api)
+        let manager = TemplateManager(apiService: api, archiver: TemplateArchiver())
         
         let expectation = XCTestExpectation()
         

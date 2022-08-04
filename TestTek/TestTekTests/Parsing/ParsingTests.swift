@@ -80,7 +80,7 @@ class ParsingTests: XCTestCase {
         
         let mock = APIMock(fileToUse: jsonFileName)
         
-        let templateManager = TemplateManager(apiService: mock)
+        let templateManager = TemplateManager(apiService: mock, archiver: TemplateArchiver())
         
         let expectation = XCTestExpectation(description: "Parsing data")
         

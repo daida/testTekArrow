@@ -15,20 +15,25 @@ struct TemplateManager: TemplateManagerInterface {
     
     private let jsonDecoder = JSONDecoder()
     
-    private let archiver: TemplateArchiverInterface
+    private let archiver: TemplateArchiverInterface?
     
     var timeOutRequest: Int {
         get { self.apiService.requestTimeOut }
         set { self.apiService.requestTimeOut = newValue }
     }
     
-    init(apiService: APIServiceInterface, archiver: TemplateArchiverInterface) {
+    init(apiService: APIServiceInterface, archiver: TemplateArchiverInterface? = nil) {
         self.apiService = apiService
         self.archiver = archiver
     }
     
     func getCachedTemplate(onCompletion: @escaping ([Template]?) -> Void) {
-        self.archiver.retriveTemplate { template in
+        guard let archiver = archiver else {
+            onCompletion(nil)
+            return
+        }
+
+        archiver.retriveTemplate { template in
             guard
                 let template = template,
                     template.isEmpty == false else {
@@ -67,7 +72,7 @@ struct TemplateManager: TemplateManagerInterface {
                             }
                             return
                         }
-                        self.archiver.save(template: dest)
+                        self.archiver?.save(template: dest)
                         onCompletion(.success(dest))
                     } catch {
                         self.queue.async {

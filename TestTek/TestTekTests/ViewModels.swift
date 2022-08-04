@@ -45,6 +45,7 @@ class ViewModels: XCTestCase {
         var cancellables: Set<AnyCancellable> = []
         
         let templateManager = TemplateManager(apiService: APIMock(fileToUse: "templates"))
+        
         let viewModel = TemplateListViewModel(templateManager: templateManager)
         
         let loadingExp = XCTestExpectation()
