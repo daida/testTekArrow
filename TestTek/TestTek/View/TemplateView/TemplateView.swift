@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TemplateView: View {
     
-    let viewModel: TemplateViewModelInterface
+    private let viewModel: TemplateViewModelInterface
     
     init(viewModel: TemplateViewModelInterface) {
         self.viewModel = viewModel
@@ -22,7 +22,6 @@ struct TemplateView: View {
         } else {
             TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel())
         }
-
     }
 }
 

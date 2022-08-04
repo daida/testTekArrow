@@ -21,7 +21,7 @@ class TemplateViewModel: TemplateViewModelInterface {
     }
     
     func generateRenderViewModel() -> RenderViewViewModelInterface {
-        return RenderViewViewModel(drawer: drawer, data: template.data)
+        return RenderViewViewModel(drawer: drawer, template: template)
     }
     
     init(drawer: DrawerInterface.Type, template: TemplateInterface, shouldDisplayName: Bool) {

@@ -14,7 +14,7 @@ class Archiver: XCTestCase {
         
         let expect = XCTestExpectation()
         
-        let manager = TemplateManager(apiService: APIService())
+        let manager = TemplateManager(apiService: APIMock())
         let archiver = TemplateArchiver()
         
         manager.getTemplates { result in

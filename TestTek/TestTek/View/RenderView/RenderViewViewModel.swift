@@ -10,15 +10,15 @@ import Foundation
 class RenderViewViewModel: RenderViewViewModelInterface {
 
     let drawer: DrawerInterface.Type
-    let data: TemplateDataInterface
+    let template: TemplateInterface
     
-    init(drawer: DrawerInterface.Type, data: TemplateDataInterface) {
+    init(drawer: DrawerInterface.Type, template: TemplateInterface) {
         self.drawer = drawer
-        self.data = data
+        self.template = template
     }
 }
 
 protocol RenderViewViewModelInterface {
     var drawer: DrawerInterface.Type { get }
-    var data: TemplateDataInterface { get }
+    var template: TemplateInterface { get }
 }

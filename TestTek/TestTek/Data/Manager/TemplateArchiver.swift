@@ -29,10 +29,10 @@ struct TemplateArchiver: TemplateArchiverInterface {
     private let jsonEncoder = JSONEncoder()
     private let jsonDecoder = JSONDecoder()
     
-    private let queue = DispatchQueue(label: "testTek.archiver")
+    private let queue = DispatchQueue(label: "testTek.archiver", qos: .userInitiated)
     
     private let archivePath: URL? = {
-        try? FileManager.default.url(for: .applicationDirectory,
+        try? FileManager.default.url(for: .documentDirectory,
                                      in: .userDomainMask,
                                      appropriateFor: nil,
                                      create: true).appendingPathComponent("templates")
@@ -59,6 +59,7 @@ struct TemplateArchiver: TemplateArchiverInterface {
     func save(template: [Template], onCompletion: ((Bool) -> Void)?) {
         guard let data = try? self.jsonEncoder.encode(template),
               let path = self.archivefilePath else { onCompletion?(false); return }
+        
         self.queue.async {
             do {
                 try data.write(to: path)
