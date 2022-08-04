@@ -6,6 +6,15 @@ The Interface part is done with SwiftUI.
 
 The App is based on MVVM architecture patern, and use OOP and dependency injection.
 
+Templates are cached in order to be retrived if there is no internet connection. (if there is internet we always try to fetch new template then fallback
+on cached templates.
+
+Unit test coverage:
+
+- model Parsing
+- Drawer (frame generator)
+- ViewModels
+- Archiver
 
 ![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-04 at 10 06 20](https://user-images.githubusercontent.com/2492897/182800292-ef859b6c-211f-4a25-bffe-b7c174b86ea8.png)
 ![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-04 at 10 05 39](https://user-images.githubusercontent.com/2492897/182800314-765bf5dc-496c-4ca8-b160-d7439a29dcbe.png)
