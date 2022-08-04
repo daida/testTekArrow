@@ -8,23 +8,6 @@
 import Foundation
 
 struct TemplateArchiver: TemplateArchiverInterface {
-    func retriveTemplate(onCompletion: @escaping ([Template]?) -> Void) {
-        guard
-            let dataPathURL = self.archivefilePath,
-            let data = try? Data(contentsOf: dataPathURL)
-        else { onCompletion(nil); return  }
-        
-        self.queue.async {
-            do {
-                let dest = try self.jsonDecoder.decode([Template].self, from: data)
-                onCompletion(dest)
-            } catch {
-                print(error)
-                onCompletion(nil)
-            }
-        }
-    }
-    
     
     private let jsonEncoder = JSONEncoder()
     private let jsonDecoder = JSONDecoder()
@@ -53,6 +36,23 @@ struct TemplateArchiver: TemplateArchiverInterface {
         
         if FileManager.default.fileExists(atPath: archivePath.path, isDirectory: nil) == false {
             try? FileManager.default.createDirectory(at: archivePath, withIntermediateDirectories: true)
+        }
+    }
+    
+    func retriveTemplate(onCompletion: @escaping ([Template]?) -> Void) {
+        guard
+            let dataPathURL = self.archivefilePath,
+            let data = try? Data(contentsOf: dataPathURL)
+        else { onCompletion(nil); return  }
+        
+        self.queue.async {
+            do {
+                let dest = try self.jsonDecoder.decode([Template].self, from: data)
+                onCompletion(dest)
+            } catch {
+                print(error)
+                onCompletion(nil)
+            }
         }
     }
     

@@ -63,7 +63,7 @@ class TemplateRendererViewController: UIViewController {
         }
     }
     
-    @objc private func userDidLongPress() {
+    @objc private func userDidLongPress(_ gesture: UILongPressGestureRecognizer) {
         let image = self.makeTemplateScreenShot()
         
         let fileURL = FileManager.default.temporaryDirectory.self.appendingPathComponent(self.templateRenderView.renderViewModel.template.name).appendingPathExtension("jpeg")
@@ -77,11 +77,17 @@ class TemplateRendererViewController: UIViewController {
         
         let items = [fileURL]
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+       
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            activityViewController.popoverPresentationController?.sourceRect = CGRect(origin: gesture.location(in: self.templateRenderView), size: CGSize(width: 1, height: 1))
+            }
+        
         self.present(activityViewController, animated: true)
     }
     
     private func setupGesture() {
-        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(userDidLongPress))
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(userDidLongPress(_:)))
         self.view.addGestureRecognizer(gesture)
     }
     
