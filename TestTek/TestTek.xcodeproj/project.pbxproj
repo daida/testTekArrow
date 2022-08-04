@@ -167,7 +167,6 @@
 				A13FDEE428991CDA00B584E7 /* Data */,
 				A13FDEBA28991B3F00B584E7 /* TestTekApp.swift */,
 				A13FDEBC28991B3F00B584E7 /* ContentView.swift */,
-				A13FDEF0289946E400B584E7 /* ViewModelFactory.swift */,
 				A13FDEBE28991B4000B584E7 /* Assets.xcassets */,
 				A13FDEC028991B4000B584E7 /* Preview Content */,
 			);
@@ -313,6 +312,7 @@
 		A1DC4CFE289B3E7500CA94CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A13FDEF0289946E400B584E7 /* ViewModelFactory.swift */,
 				A1DC4D01289B3EA900CA94CE /* RenderView */,
 				A1DC4D00289B3E8F00CA94CE /* TemplateView */,
 				A1DC4CFF289B3E7C00CA94CE /* List */,
