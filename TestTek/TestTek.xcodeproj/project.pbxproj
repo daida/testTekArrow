@@ -12,8 +12,6 @@
 		A13FDEBF28991B4000B584E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13FDEBE28991B4000B584E7 /* Assets.xcassets */; };
 		A13FDEC228991B4000B584E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13FDEC128991B4000B584E7 /* Preview Assets.xcassets */; };
 		A13FDECC28991B4000B584E7 /* ParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDECB28991B4000B584E7 /* ParsingTests.swift */; };
-		A13FDED628991B4000B584E7 /* TestTekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED528991B4000B584E7 /* TestTekUITests.swift */; };
-		A13FDED828991B4000B584E7 /* TestTekUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */; };
 		A13FDEE628991D4400B584E7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEE528991D4400B584E7 /* APIService.swift */; };
 		A13FDEE92899240700B584E7 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = A13FDEE82899240700B584E7 /* Reachability */; };
 		A13FDEEB2899263C00B584E7 /* TemplateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13FDEEA2899263C00B584E7 /* TemplateManager.swift */; };
@@ -58,13 +56,6 @@
 			remoteGlobalIDString = A13FDEB628991B3F00B584E7;
 			remoteInfo = TestTek;
 		};
-		A13FDED228991B4000B584E7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A13FDEAF28991B3F00B584E7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A13FDEB628991B3F00B584E7;
-			remoteInfo = TestTek;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -75,9 +66,6 @@
 		A13FDEC128991B4000B584E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A13FDEC728991B4000B584E7 /* TestTekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13FDECB28991B4000B584E7 /* ParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingTests.swift; sourceTree = "<group>"; };
-		A13FDED128991B4000B584E7 /* TestTekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A13FDED528991B4000B584E7 /* TestTekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITests.swift; sourceTree = "<group>"; };
-		A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTekUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A13FDEE528991D4400B584E7 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A13FDEEA2899263C00B584E7 /* TemplateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateManager.swift; sourceTree = "<group>"; };
 		A13FDEEC28992CD600B584E7 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
@@ -129,13 +117,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A13FDECE28991B4000B584E7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -144,7 +125,6 @@
 			children = (
 				A13FDEB928991B3F00B584E7 /* TestTek */,
 				A13FDECA28991B4000B584E7 /* TestTekTests */,
-				A13FDED428991B4000B584E7 /* TestTekUITests */,
 				A13FDEB828991B3F00B584E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -154,7 +134,6 @@
 			children = (
 				A13FDEB728991B3F00B584E7 /* TestTek.app */,
 				A13FDEC728991B4000B584E7 /* TestTekTests.xctest */,
-				A13FDED128991B4000B584E7 /* TestTekUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,15 +170,6 @@
 				A1C0E7DD289BCDAE006375DD /* APIMock */,
 			);
 			path = TestTekTests;
-			sourceTree = "<group>";
-		};
-		A13FDED428991B4000B584E7 /* TestTekUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A13FDED528991B4000B584E7 /* TestTekUITests.swift */,
-				A13FDED728991B4000B584E7 /* TestTekUITestsLaunchTests.swift */,
-			);
-			path = TestTekUITests;
 			sourceTree = "<group>";
 		};
 		A13FDEE428991CDA00B584E7 /* Data */ = {
@@ -389,24 +359,6 @@
 			productReference = A13FDEC728991B4000B584E7 /* TestTekTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A13FDED028991B4000B584E7 /* TestTekUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A13FDEE128991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTekUITests" */;
-			buildPhases = (
-				A13FDECD28991B4000B584E7 /* Sources */,
-				A13FDECE28991B4000B584E7 /* Frameworks */,
-				A13FDECF28991B4000B584E7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A13FDED328991B4000B584E7 /* PBXTargetDependency */,
-			);
-			name = TestTekUITests;
-			productName = TestTekUITests;
-			productReference = A13FDED128991B4000B584E7 /* TestTekUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -421,10 +373,6 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					A13FDEC628991B4000B584E7 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = A13FDEB628991B3F00B584E7;
-					};
-					A13FDED028991B4000B584E7 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = A13FDEB628991B3F00B584E7;
 					};
@@ -448,7 +396,6 @@
 			targets = (
 				A13FDEB628991B3F00B584E7 /* TestTek */,
 				A13FDEC628991B4000B584E7 /* TestTekTests */,
-				A13FDED028991B4000B584E7 /* TestTekUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -471,13 +418,6 @@
 			files = (
 				A1C0E7ED289C002E006375DD /* apiIPhone13ProMax.json in Resources */,
 				A1C0E7E9289BF73A006375DD /* refIphone13ProMax.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A13FDECF28991B4000B584E7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,15 +470,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A13FDECD28991B4000B584E7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A13FDED628991B4000B584E7 /* TestTekUITests.swift in Sources */,
-				A13FDED828991B4000B584E7 /* TestTekUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -546,11 +477,6 @@
 			isa = PBXTargetDependency;
 			target = A13FDEB628991B3F00B584E7 /* TestTek */;
 			targetProxy = A13FDEC828991B4000B584E7 /* PBXContainerItemProxy */;
-		};
-		A13FDED328991B4000B584E7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A13FDEB628991B3F00B584E7 /* TestTek */;
-			targetProxy = A13FDED228991B4000B584E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -769,42 +695,6 @@
 			};
 			name = Release;
 		};
-		A13FDEE228991B4000B584E7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6928A48RP7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTekUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestTek;
-			};
-			name = Debug;
-		};
-		A13FDEE328991B4000B584E7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6928A48RP7;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = nico.bellon.TestTekUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestTek;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -831,15 +721,6 @@
 			buildConfigurations = (
 				A13FDEDF28991B4000B584E7 /* Debug */,
 				A13FDEE028991B4000B584E7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A13FDEE128991B4000B584E7 /* Build configuration list for PBXNativeTarget "TestTekUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A13FDEE228991B4000B584E7 /* Debug */,
-				A13FDEE328991B4000B584E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
