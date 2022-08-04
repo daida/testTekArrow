@@ -40,6 +40,9 @@ class ViewModels: XCTestCase {
         wait(for: [expectAPI], timeout: 5)
     }
     
+    // Here we will subscribe to observable data in combine
+    // and then we will validate their good behavior during the
+    // data downloading, error, and when data are ready
     func testListViewModel() {
         
         var cancellables: Set<AnyCancellable> = []

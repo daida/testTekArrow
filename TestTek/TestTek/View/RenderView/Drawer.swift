@@ -35,10 +35,12 @@ class Drawer: DrawerInterface {
             UIRectFill(destRect)
         }
         
+        // Each child will be draw by recursive call of this method with the parent RECT
         for aChild in template.children {
             self.drawRect(rect: destRect, template: aChild)
         }
         
+        // The padding is draw line by line on top of the childrens
         Drawer.drawPading(rect: destRect,
                         pading: template.padding,
                         paddingTop: template.paddingTop,
@@ -227,5 +229,8 @@ protocol DrawerInterface {
                     y: Float,
                     width: Float,
                     height: Float,
-                    color: UIColor, anchorH: TemplateAnchorH, anchorV: TemplateAnchorV, padding: Float)
+                    color: UIColor,
+                           anchorH: TemplateAnchorH,
+                           anchorV: TemplateAnchorV,
+                           padding: Float)
 }

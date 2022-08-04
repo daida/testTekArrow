@@ -45,6 +45,7 @@ struct TemplateArchiver: TemplateArchiverInterface {
             let data = try? Data(contentsOf: dataPathURL)
         else { onCompletion(nil); return  }
         
+        // Decoding performed on a background queue to be sure to not freez the UI
         self.queue.async {
             do {
                 let dest = try self.jsonDecoder.decode([Template].self, from: data)
@@ -62,6 +63,7 @@ struct TemplateArchiver: TemplateArchiverInterface {
         
         self.queue.async {
             do {
+                // writting performed on a background queue to be sure to not freez the UI
                 try data.write(to: path)
                 onCompletion?(true)
             } catch {

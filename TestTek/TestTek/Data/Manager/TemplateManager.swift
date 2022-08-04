@@ -48,6 +48,8 @@ struct TemplateManager: TemplateManagerInterface {
         self.apiService.getTemplate { result in
             switch result {
             case .failure(let error):
+                
+                // if there is no internet there is maybe some template in cache !
                 self.getCachedTemplate { cachedTemplates in
                     guard let cachedTemplates = cachedTemplates else {
                         onCompletion(.failure(.APIServiceError(error: error)))
@@ -57,6 +59,8 @@ struct TemplateManager: TemplateManagerInterface {
                 }
 
             case .success(let data):
+                
+                // The parsing is done on a background queue to be sure to not freeze the UI
                 self.queue.async {
                     do {
                         let dico = try self.jsonDecoder.decode([String : [Template]].self, from: data)

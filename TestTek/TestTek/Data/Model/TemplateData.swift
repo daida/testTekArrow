@@ -7,6 +7,9 @@
 
 import Foundation
 
+// Main model of the app,
+// the data check is done in Encodable methods
+// the replacement by default value is also done in those methods
 struct TemplateData: TemplateDataInterface, Codable, Identifiable {
     
     private static func isOutOfBound(_ toCheck: Float) -> Bool {
@@ -227,7 +230,8 @@ enum TemplateSerializationError: Error {
     case wrongStringFormat
 }
 
-
+// All Models are accesed by protocol in order to be able to swap model
+// Exemple Codable -> CoreData
 protocol TemplateDataInterface {
     var id: UUID { get }
     var x: Float { get }

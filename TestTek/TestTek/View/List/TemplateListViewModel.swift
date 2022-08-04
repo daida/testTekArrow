@@ -15,6 +15,10 @@ class TemplateListViewModel: ObservableObject {
         didSet { self.didUpdateMode() }
     }
     
+    // This public observable properties are edited everytime the
+    // viewModel private mode change, the view don't know the mode value
+    // but observe specialized display properties
+    
     @Published var shouldDisplayLoaderView: Bool = false
     @Published var templatesViewModels: [TemplateViewModelInterface] = []
     @Published var errorMessageText: String? = nil
@@ -49,6 +53,7 @@ class TemplateListViewModel: ObservableObject {
         self.didUpdateMode()
     }
     
+    // Should be called from the view
     func startLoadingTemplate() {
         self.shouldDisplayLoaderView = true
         self.manager.getTemplates { [weak self] result in

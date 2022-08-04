@@ -9,6 +9,10 @@ import XCTest
 
 @testable import TestTek
 
+// The Drawer is tested by comparing pre calculated
+// frame with runtime calculated frame
+
+// Calculated frame are computed for a screen size and a specific json file
 class DrawerTest: XCTestCase {
 
     func testFramWith(jsonName: String, refFrames: (frames: [String: [CGRect]],
@@ -30,6 +34,9 @@ class DrawerTest: XCTestCase {
                 let testedFrames = DrawTesterTool.computeFrame(templates: templates,
                                                      rect: refFrames.screenRect)
                 
+                // here the computed frame are printed in JSON format
+                // if the result is OK, the output could be copy and paste in a JSON file
+                // and used for future test reference
                 DrawTesterTool.prettyPrint(frames: testedFrames)
                 
                 if testedFrames != refFrames.frames {

@@ -76,6 +76,7 @@ class ParsingTests: XCTestCase {
         return true
     }
     
+    // Check every Template model field with a static model field by the hand ! so no parsing error...
     func parsingIsOK(jsonFileName: String, expectedModel: [ExpectationTemplate]) {
         
         let mock = APIMock(fileToUse: jsonFileName)

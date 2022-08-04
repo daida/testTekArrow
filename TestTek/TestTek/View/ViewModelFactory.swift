@@ -7,6 +7,9 @@
 
 import Foundation
 
+// Here it's the configuration pannel of the application
+// Ther API, the archiver and the Drawer are declared here
+// and will be used everywhere in the app
 struct ViewModelFactory {
     
     private static let appDrawer = Drawer.self
