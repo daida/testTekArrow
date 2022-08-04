@@ -11,6 +11,7 @@ on cached templates.)
 - User can long press on template on list or in detail view to share a picture of their template.
 
 Package Manage SPM
+
 Dependency: Reachability
 
 Unit test coverage:
