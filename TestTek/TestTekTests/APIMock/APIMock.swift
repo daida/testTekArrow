@@ -6,7 +6,6 @@
 //
 
 import Foundation
-@testable import TestTek
 
 struct APIMock: APIServiceInterface {
     
@@ -14,8 +13,11 @@ struct APIMock: APIServiceInterface {
     
     var fileToUse: String = "templates"
     
-    init() {
+    init(fileToUse: String? = nil) {
         self.requestTimeOut = 2
+        if let fileToUse = fileToUse {
+            self.fileToUse = fileToUse
+        }
     }
     
     func getTemplate(onCompletion: @escaping (Result<Data, APIServiceError>) -> Void) {

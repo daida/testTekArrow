@@ -13,7 +13,11 @@ struct APIService: APIServiceInterface {
     
     var requestTimeOut = 3
     
-   private let reachability = try? Reachability()
+    private let reachability: Reachability? =  {
+        let dest = try? Reachability()
+        try? dest?.startNotifier()
+        return dest
+    }()
     
     private struct Constant{
         static let endPointURL = "https://ptitchevreuil.github.io/mojo/templates.json"

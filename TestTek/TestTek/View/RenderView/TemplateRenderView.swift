@@ -30,6 +30,10 @@ class TemplateRenderView: UIView {
     override func draw(_ rect: CGRect) {
         Drawer.drawRect(rect: rect, template: self.renderViewModel.data)
     }
+    
+    override func layoutSubviews() {
+        self.setNeedsDisplay()
+    }
 }
 
 struct TemplateRenderViewBridge: UIViewRepresentable {
