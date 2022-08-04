@@ -75,11 +75,6 @@ struct APIService: APIServiceInterface {
     
 }
 
-protocol APIServiceInterface {
-    func getTemplate(onCompletion: @escaping (Result<Data, APIServiceError>) -> Void)
-    var requestTimeOut: Int { get set }
-}
-
 enum APIServiceError: Error {
     case httpError(code: Int, originalError: Error?)
     case noInternet

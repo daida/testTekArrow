@@ -41,7 +41,6 @@ struct Template: TemplateInterface, Codable {
     }
 }
 
-   
 
 protocol TemplateInterface {
     var name: String { get }

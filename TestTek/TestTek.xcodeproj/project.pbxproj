@@ -33,6 +33,8 @@
 		A1DC4CFB289B18F700CA94CE /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4CFA289B18F700CA94CE /* Drawer.swift */; };
 		A1DC4CFD289B2CBA00CA94CE /* TemplateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4CFC289B2CBA00CA94CE /* TemplateViewModel.swift */; };
 		A1DC4D03289B3ED100CA94CE /* RenderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4D02289B3ED100CA94CE /* RenderViewViewModel.swift */; };
+		A1DC4D05289B4B1D00CA94CE /* APIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4D04289B4B1D00CA94CE /* APIMock.swift */; };
+		A1DC4D07289B4B8F00CA94CE /* APIServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC4D06289B4B8F00CA94CE /* APIServiceInterface.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		A1DC4CFA289B18F700CA94CE /* Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		A1DC4CFC289B2CBA00CA94CE /* TemplateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewModel.swift; sourceTree = "<group>"; };
 		A1DC4D02289B3ED100CA94CE /* RenderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderViewViewModel.swift; sourceTree = "<group>"; };
+		A1DC4D04289B4B1D00CA94CE /* APIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMock.swift; sourceTree = "<group>"; };
+		A1DC4D06289B4B8F00CA94CE /* APIServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceInterface.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				A13FDECB28991B4000B584E7 /* TestTekTests.swift */,
+				A1DC4D04289B4B1D00CA94CE /* APIMock.swift */,
 			);
 			path = TestTekTests;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			children = (
 				A13FDEE528991D4400B584E7 /* APIService.swift */,
 				A13FDEEA2899263C00B584E7 /* TemplateManager.swift */,
+				A1DC4D06289B4B8F00CA94CE /* APIServiceInterface.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				A13FDEF428994A6000B584E7 /* TemplateData.swift in Sources */,
 				A1DC4D03289B3ED100CA94CE /* RenderViewViewModel.swift in Sources */,
 				A1A9B70D2899B5AD00C3DB8D /* UIImageExtension.swift in Sources */,
+				A1DC4D07289B4B8F00CA94CE /* APIServiceInterface.swift in Sources */,
 				A13FDF0028997F5300B584E7 /* TemplateView.swift in Sources */,
 				A13FDEFD2899630A00B584E7 /* TemplateListView.swift in Sources */,
 				A13FDEF628994AB500B584E7 /* TemplateAnchor.swift in Sources */,
@@ -410,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DC4D05289B4B1D00CA94CE /* APIMock.swift in Sources */,
 				A13FDECC28991B4000B584E7 /* TestTekTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
