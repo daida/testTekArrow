@@ -47,13 +47,18 @@ class TemplateRendererViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.templateRenderView.translatesAutoresizingMaskIntoConstraints = false
         var constraints = [NSLayoutConstraint]()
-        constraints.append(self.templateRenderView.topAnchor.constraint(equalTo: self.view.topAnchor))
-        constraints.append(self.templateRenderView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor))
-        constraints.append(self.templateRenderView.leftAnchor.constraint(equalTo: self.view.leftAnchor))
-        constraints.append(self.templateRenderView.rightAnchor.constraint(equalTo: self.view.rightAnchor))
+
+        constraints.append(self.templateRenderView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor))
+        constraints.append(self.templateRenderView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor))
+        
+        constraints.append(self.templateRenderView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.9))
+        
+        constraints.append(self.templateRenderView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8))
+        
         self.view.addSubview(self.templateRenderView)
         NSLayoutConstraint.activate(constraints)
         self.setupGesture()
+        self.templateRenderView.clipsToBounds = true
     }
     
     func makeTemplateScreenShot() -> UIImage {
@@ -89,6 +94,15 @@ class TemplateRendererViewController: UIViewController {
     private func setupGesture() {
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(userDidLongPress(_:)))
         self.view.addGestureRecognizer(gesture)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+      //  self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.templateRenderView.layer.cornerRadius = self.view.frame.width * 0.04
     }
     
     required init?(coder: NSCoder) {

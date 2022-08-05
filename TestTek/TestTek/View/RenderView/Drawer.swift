@@ -118,84 +118,87 @@ class Drawer: DrawerInterface {
     
     // Draw one line with start and endPoint
     // usefull for padding
-    private static func drawLine(start: CGPoint, end: CGPoint, color: UIColor, lineSize: CGFloat) {
+    static func drawLine(start: CGPoint, end: CGPoint, color: UIColor, lineSize: CGFloat) {
         
-        if let context = UIGraphicsGetCurrentContext() {
-                context.setLineCap(.square)
-                context.setLineWidth(lineSize)
-                color.set()
-                context.move(to: start)
-                context.addLine(to: end )
-                context.strokePath()
+//        if let context = UIGraphicsGetCurrentContext() {
+//                context.setLineCap(.square)
+//                context.setLineWidth(lineSize)
+//                color.set()
+//                context.move(to: start)
+//                context.addLine(to: end )
+//                context.strokePath()
+//        }
+        
+        var crop: CGRect
+        
+        color.setFill()
+    
+        
+        if end.x > start.x {
+            crop = CGRect(x: start.x, y: start.y, width: (end.x - start.x), height: lineSize)
+            UIRectFill(crop)
+        } else if end.x < start.x {
+            crop = CGRect(x: end.x, y: end.y, width: (start.x - end.x), height: lineSize)
+            UIRectFill(crop)
+        } else if end.y > start.y {
+            crop = CGRect(x: start.x, y: start.y, width: lineSize, height: (end.y - start.y))
+            UIRectFill(crop)
+        } else if end.y < start.y {
+            crop = CGRect(x: end.x, y: end.y, width: lineSize, height: (start.y - end.y))
+            UIRectFill(crop)
         }
+        
 
     }
     
     // Draw a padding rectangle
-    private static func drawPading(rect: CGRect, pading: Float,
+    static func drawPading(rect: CGRect, pading: Float,
                     paddingTop:Float? = nil,
                     paddingBottom: Float? = nil,
                     paddingLeft: Float? = nil,
                     paddingRight: Float? = nil,
                     color: UIColor = .black) {
       
-      
-         
-            let smallestSideValue = rect.size.width < rect.size.height ? rect.size.width : rect.size.height
-            
-            let destPadding = CGFloat(pading) * smallestSideValue
         
 
-            // Vertical padding
-            
+        // Width
         
-            if let paddingTop = paddingTop {
-                Drawer.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
-                              end: CGPoint(x: rect.maxX, y: rect.minY),
-                                color: color,
-                                lineSize: CGFloat(paddingTop) * smallestSideValue)
-            } else {
-                Drawer.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
-                              end: CGPoint(x: rect.maxX, y: rect.minY),
-                                color: color, lineSize: destPadding)
-            }
-            
-            if let paddingBottom = paddingBottom {
-                Drawer.drawLine(start: CGPoint(x: rect.minX, y: rect.maxY),
-                              end: CGPoint(x: rect.maxX, y: rect.maxY),
-                                color: color,
-                                lineSize: CGFloat(paddingBottom) * smallestSideValue)
-            } else {
-                Drawer.drawLine(start: CGPoint(x: rect.minX, y: rect.maxY),
-                              end: CGPoint(x: rect.maxX, y: rect.maxY),
-                                color: color,
-                                lineSize: destPadding)
-            }
-            
-            
-            // Horizontal padding
+        let lineSizeWidth = CGFloat(pading) * rect.size.width
+        
+    
+        if let paddingTop = paddingTop {
+            drawLine(start: CGPoint(x: rect.minX , y: rect.minY), end: CGPoint(x: rect.maxX + lineSizeWidth, y: rect.minY), color: color, lineSize: CGFloat(paddingTop) * rect.size.width)
+        } else {
+            drawLine(start: CGPoint(x: rect.minX , y: rect.minY), end: CGPoint(x: rect.maxX + lineSizeWidth, y: rect.minY), color: color, lineSize: lineSizeWidth)
+        }
+        
+        if let paddingBottom = paddingBottom {
+            drawLine(start: CGPoint(x: rect.minX, y: rect.maxY - lineSizeWidth), end: CGPoint(x: rect.maxX, y: rect.maxY), color: color, lineSize: CGFloat(paddingBottom) * lineSizeWidth)
+        } else {
+            drawLine(start: CGPoint(x: rect.minX, y: rect.maxY - lineSizeWidth), end: CGPoint(x: rect.maxX, y: rect.maxY), color: color, lineSize: lineSizeWidth)
+        }
 
-            if let paddingLeft = paddingLeft {
-                Drawer.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
-                              end: CGPoint(x: rect.minX, y: rect.maxY), color: color,
-                                lineSize: CGFloat(paddingLeft) * smallestSideValue)
-            } else {
-                Drawer.drawLine(start: CGPoint(x: rect.minX, y: rect.minY),
-                              end: CGPoint(x: rect.minX, y: rect.maxY), color: color,
-                                lineSize: destPadding)
-            }
-            
-            if let paddingRight = paddingRight {
-                Drawer.drawLine(start: CGPoint(x: rect.maxX, y: rect.minY),
-                              end: CGPoint(x: rect.maxX, y: rect.maxY),
-                                color: color,
-                                lineSize: CGFloat(paddingRight) * smallestSideValue)
-            } else {
-                Drawer.drawLine(start: CGPoint(x: rect.maxX, y: rect.minY),
-                              end: CGPoint(x: rect.maxX, y: rect.maxY),
-                                color: color,
-                                lineSize: destPadding)
-            }
+        
+        // height
+        
+        let lineSizeHeight = CGFloat(pading) * rect.size.height
+        
+        if let paddingLeft = paddingLeft {
+            drawLine(start: CGPoint(x: rect.minX, y: rect.minY), end: CGPoint(x: rect.minX, y: rect.maxY), color: color, lineSize: CGFloat(paddingLeft) * lineSizeHeight)
+        } else {
+            drawLine(start: CGPoint(x: rect.minX, y: rect.minY), end: CGPoint(x: rect.minX, y: rect.maxY), color: color, lineSize: lineSizeHeight)
+        }
+        
+//        drawLine(start: CGPoint(x: rect.minX, y: rect.minY), end: CGPoint(x: rect.minX, y: rect.maxY), color: color, lineSize: lineSizeHeight)
+        
+        if let paddingRight = paddingRight {
+            drawLine(start: CGPoint(x: rect.maxX - lineSizeHeight, y: rect.minY),
+                     end: CGPoint(x: rect.maxX - lineSizeHeight, y: rect.maxY), color: color, lineSize: CGFloat(paddingRight) * rect.size.height)
+        } else {
+            drawLine(start: CGPoint(x: rect.maxX - lineSizeHeight, y: rect.minY),
+                     end: CGPoint(x: rect.maxX - lineSizeHeight, y: rect.maxY), color: color, lineSize: lineSizeHeight)
+        }
+    
     }
     
     // Draw the template image it there is some
