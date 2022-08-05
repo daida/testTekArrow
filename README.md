@@ -21,9 +21,8 @@ Unit test coverage:
 - ViewModels
 - Archiver
 
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-04 at 10 06 20](https://user-images.githubusercontent.com/2492897/182800292-ef859b6c-211f-4a25-bffe-b7c174b86ea8.png)
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-04 at 10 05 39](https://user-images.githubusercontent.com/2492897/182800314-765bf5dc-496c-4ca8-b160-d7439a29dcbe.png)
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-04 at 10 05 48](https://user-images.githubusercontent.com/2492897/182800433-c5e6b079-77dd-41b7-a936-203311e0d258.png)
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-04 at 10 25 18](https://user-images.githubusercontent.com/2492897/182800461-2f87c955-b1be-4f01-8676-66afd79ca883.png)
-![IMG_C4EEBB1A524E-1](https://user-images.githubusercontent.com/2492897/182915991-a5763157-6fde-48fc-8c89-3bee2fe3e9ab.jpeg)
-![IMG_E09E551988ED-1](https://user-images.githubusercontent.com/2492897/182915997-edc04e3f-56b2-43bf-b4fd-46f1dd6bf9fe.jpeg)
+
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-05 at 05 16 14](https://user-images.githubusercontent.com/2492897/182994041-792d16b1-901d-440d-8e8e-908e42365306.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-05 at 05 16 35](https://user-images.githubusercontent.com/2492897/182994065-a2ca9dde-f685-45c0-a2cd-aa5aa3383dc9.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-05 at 05 16 46](https://user-images.githubusercontent.com/2492897/182994078-c9caeb41-9053-41f1-95a0-aee7551dd527.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-05 at 05 17 02](https://user-images.githubusercontent.com/2492897/182994114-66c78771-8f3c-41e4-a59c-6e82346b2528.png)
