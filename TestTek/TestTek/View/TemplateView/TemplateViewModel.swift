@@ -20,8 +20,8 @@ class TemplateViewModel: TemplateViewModelInterface {
         TemplateViewModel(drawer: drawer, template: template, shouldDisplayName: shouldDisplayName)
     }
     
-    func generateRenderViewModel() -> RenderViewViewModelInterface {
-        return RenderViewViewModel(drawer: drawer, template: template)
+    func generateRenderViewModel(shouldDisplayBackgroundColor: Bool) -> RenderViewViewModelInterface {
+        return RenderViewViewModel(drawer: drawer, template: template, shouldDisplayBackgroundColor: shouldDisplayBackgroundColor)
     }
     
     init(drawer: DrawerInterface.Type, template: TemplateInterface, shouldDisplayName: Bool) {
@@ -41,6 +41,6 @@ protocol TemplateViewModelInterface {
     
     var id: UUID { get }
     
-    func generateRenderViewModel() -> RenderViewViewModelInterface
+    func generateRenderViewModel(shouldDisplayBackgroundColor: Bool) -> RenderViewViewModelInterface
     func generateCopyWith(shouldDisplayName: Bool) -> TemplateViewModelInterface
 }

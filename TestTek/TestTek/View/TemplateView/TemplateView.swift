@@ -17,10 +17,10 @@ struct TemplateView: View {
     
     var body: some View {
         if self.viewModel.shouldDisplayName == true {
-            TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel())
+            TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel(shouldDisplayBackgroundColor: false))
                 .navigationTitle(self.viewModel.name)
         } else {
-            TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel())
+            TemplateRenderViewBridge(viewModel: self.viewModel.generateRenderViewModel(shouldDisplayBackgroundColor: true))
         }
     }
 }

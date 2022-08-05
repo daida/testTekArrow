@@ -59,6 +59,12 @@ class TemplateRendererViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
         self.setupGesture()
         self.templateRenderView.clipsToBounds = true
+    
+        if viewModel.shouldDisplayBackgroundColor == true {
+            if let backColor = viewModel.template.data.backgroundColor {
+                self.view.backgroundColor = UIColor(hexaString: backColor)
+            }
+        }
     }
     
     func makeTemplateScreenShot() -> UIImage {
@@ -96,13 +102,14 @@ class TemplateRendererViewController: UIViewController {
         self.view.addGestureRecognizer(gesture)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-      //  self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     override func viewDidLayoutSubviews() {
-        self.templateRenderView.layer.cornerRadius = self.view.frame.width * 0.04
+        if self.viewModel.shouldDisplayBackgroundColor == true {
+            self.view.layer.cornerRadius = self.view.frame.width * 0.06
+        } else {
+            self.templateRenderView.layer.cornerRadius = self.view.frame.width * 0.04
+        }
+
+        self.view.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
