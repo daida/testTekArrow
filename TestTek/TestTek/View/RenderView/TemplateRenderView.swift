@@ -112,6 +112,16 @@ class TemplateRendererViewController: UIViewController {
         self.view.clipsToBounds = true
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // AMINE !!!! HELP !!!
+        let dateStr = "2015-11-05 09:14 CET"
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd HH:mm zzz"
+        let dest = dateFormater.date(from: dateStr)
+        print(dest)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
